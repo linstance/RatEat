@@ -33,13 +33,18 @@ public class BeeControl : MonoBehaviour
         if (Vector2.Distance(transform.position, target.position) > contactDistance && follow)
             transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+    public void follower()
     {
+        
         follow = true;
+        //
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public void followerfalse()
     {
+
         follow = false;
+        //
     }
 }
