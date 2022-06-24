@@ -8,10 +8,10 @@ public class BeeControl : MonoBehaviour
     Transform target;
 
     [Header("추적속도")]
-    [SerializeField] [Range(1f, 4f)] float moveSpeed = 3f;
+    [SerializeField] [Range(-4f, 4f)] float moveSpeed = 3f;
 
     [Header("근접 거리")]
-    [SerializeField] [Range(1f, 4f)] float contactDistance = 1f;
+    [SerializeField] [Range(-4f, 4f)] float contactDistance = 1f;
 
     bool follow = false;
 
