@@ -8,10 +8,10 @@ public class BeeControl : MonoBehaviour
     Transform target;
 
     [Header("추적속도")]
-    [SerializeField] [Range(1f, 4f)] float moveSpeed = 3f;
+    [SerializeField] [Range(-4f, 4f)] float moveSpeed = 3f;
 
     [Header("근접 거리")]
-    [SerializeField] [Range(1f, 4f)] float contactDistance = 1f;
+    [SerializeField] [Range(-4f, 4f)] float contactDistance = 1f;
 
     bool follow = false;
 
@@ -33,13 +33,18 @@ public class BeeControl : MonoBehaviour
         if (Vector2.Distance(transform.position, target.position) > contactDistance && follow)
             transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+    public void follower()
     {
+        
         follow = true;
+        //
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public void followerfalse()
     {
+
         follow = false;
+        //
     }
 }
