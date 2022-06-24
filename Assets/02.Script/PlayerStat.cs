@@ -4,17 +4,8 @@ using UnityEngine;
 
 public class PlayerStat
 {
-
-
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public static int PlayerHP { get; set; }
+    public static float PlayerSpeed { get; set; }
+    public static float PlayerCritical { get; set; }
+    public static string PlayerJobName { get; set; }
 }
