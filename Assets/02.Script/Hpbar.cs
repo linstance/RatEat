@@ -7,11 +7,13 @@ public class Hpbar : MonoBehaviour
 {
     Image Healthbar;
     public TextMeshProUGUI HPtext;
-    float maxHealth = 10;
-    public static float health;
+    int maxHealth;
+    public int health;
     // Start is called before the first frame update
     void Start()
     {
+
+        maxHealth += WarriorController.WarrorHP;
         Healthbar = GetComponent<Image>();
         health = maxHealth;
     }
