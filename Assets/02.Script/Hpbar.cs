@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class Hpbar : MonoBehaviour
 {
     Image Healthbar;
-    float maxHealth = 200;
-    public static float health;
+    public TextMeshProUGUI HPtext;
+    int maxHealth;
+    public int health;
     // Start is called before the first frame update
     void Start()
     {
+
+        maxHealth += WarriorController.WarrorHP;
         Healthbar = GetComponent<Image>();
         health = maxHealth;
     }
@@ -18,6 +22,7 @@ public class Hpbar : MonoBehaviour
     void Update()
     {
         Healthbar.fillAmount = health / maxHealth;
+        HPtext.text = health.ToString() + "/" + maxHealth.ToString();
         if (health > maxHealth)
         {
             health = maxHealth;
