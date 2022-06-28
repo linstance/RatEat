@@ -7,25 +7,29 @@ public class Hpbar : MonoBehaviour
 {
     Image Healthbar;
     public TextMeshProUGUI HPtext;
-    int maxHealth;
-    public int health;
+    private int maxHealth;
+    //private int health;
+    private int isCurrentHP;
+
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
         maxHealth += WarriorController.WarrorHP;
         Healthbar = GetComponent<Image>();
-        health = maxHealth;
+        isCurrentHP = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Healthbar.fillAmount = health / maxHealth;
-        HPtext.text = health.ToString() + "/" + maxHealth.ToString();
-        if (health > maxHealth)
+        isCurrentHP = WarriorController.currentHP;
+        
+        HPtext.text = isCurrentHP.ToString() + "/" + maxHealth.ToString();
+        if (isCurrentHP > maxHealth)
         {
-            health = maxHealth;
+            isCurrentHP = maxHealth;
         }
     }
 }

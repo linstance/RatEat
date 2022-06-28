@@ -18,7 +18,8 @@ public class WarriorController : MonoBehaviour
 
     private float WarriorCritical; //워리어의 치명타율을 저장하는 변수
     private float WarriorSpeed; //워리어의 속도를 저장하는 변수
-    public static int WarrorHP; //워리어의 체력을 저장하는 변수
+    public static int WarrorHP; //워리어의 최대체력을 저장하는 변수
+    public static int currentHP; //현재 워리어의 체력을 저장한는 변수
     public static int WarrorMP; //워리어의 마나를 저장하는 변수
 
     void Start()
@@ -26,6 +27,7 @@ public class WarriorController : MonoBehaviour
         PlayerStat playerStat = new PlayerStat(10,150,3.1f, 2.0f, "Warrior");
         WarriorSpeed = playerStat.PlayerSpeed;
         WarrorHP = playerStat.PlayerHP;
+        currentHP = playerStat.PlayerHP;
         WarrorMP = playerStat.PlayerMP;
         WarriorCritical = playerStat.PlayerCritical;
         playerStat.CurrentPlayer(); //플레이어의 현재 상태를 출력하는 함수
@@ -36,6 +38,17 @@ public class WarriorController : MonoBehaviour
     {
         Move();
         Warriorattack();
+
+        if(Input.GetKeyDown(KeyCode.H))
+        {
+            currentHP -= 1;
+            Debug.Log("체력감소");
+        }
+
+        if(currentHP == 0)
+        {
+            Debug.Log("죽음");
+        }
     }
 
 
@@ -70,12 +83,12 @@ public class WarriorController : MonoBehaviour
     {
         if (other.gameObject.tag == "HitMash")
         {
-            WarrorHP -= currentDamage;
+           // WarrorHP =- currentDamage;
         }
 
         if(other.gameObject.tag == "needle")
         {
-            WarrorHP -= 5;
+           // WarrorHP =- 5;
         }
     }
 }

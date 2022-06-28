@@ -24,6 +24,7 @@ public class PlayerStat
     {
         Debug.Log("플레이어 직업: " + this.PlayerClassName);
         Debug.Log("플레이어 체력: " + this.PlayerHP);
+        Debug.Log("플레이어 마나" + this.PlayerMP);
         Debug.Log("플레이어 이동속도: " + this.PlayerSpeed);
         Debug.Log("플레이어 크리티컬: " + this.PlayerCritical);
     }
