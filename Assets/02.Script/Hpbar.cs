@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class Hpbar : MonoBehaviour
 {
     Image Healthbar;
-    float maxHealth = 200;
+    public TextMeshProUGUI HPtext;
+    float maxHealth = 10;
     public static float health;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,7 @@ public class Hpbar : MonoBehaviour
     void Update()
     {
         Healthbar.fillAmount = health / maxHealth;
+        HPtext.text = health.ToString() + "/" + maxHealth.ToString();
         if (health > maxHealth)
         {
             health = maxHealth;
