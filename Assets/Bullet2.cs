@@ -7,9 +7,16 @@ public class Bullet2 : MonoBehaviour
     public float speed;
     public float distance;
     public LayerMask isLayer;
+    
+
+    public static int currentHP;
+
+
     void Start()
     {
-        Invoke("DestroyBullet", 2);
+        Invoke("DestroyBullet", 1);
+        
+         WarriorController.currentHP -= currentHP ;
     }
 
     // Update is called once per frame
@@ -21,10 +28,12 @@ public class Bullet2 : MonoBehaviour
             if(raycast.collider.tag == "Player")
             {
                 Debug.Log("당했다");
+                currentHP -= 1;
             }
             DestroyBullet();
         }
         transform.Translate(transform.right * -1f * speed * Time.deltaTime);
+
 
     }
 

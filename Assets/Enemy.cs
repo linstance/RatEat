@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public float speed;
     public float atkDistance;
 
-    public GameObject bullet;
+    public GameObject sting2;
     public Transform pos;
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
             {
                 if (currenttime <= 0)
                 {
-                    GameObject bulletcopy = Instantiate(bullet, pos.position, transform.rotation);
+                    GameObject bulletcopy = Instantiate(sting2, pos.position, transform.rotation);
                     currenttime = cooltime;
                 }
             }
