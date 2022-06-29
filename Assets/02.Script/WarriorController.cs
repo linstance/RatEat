@@ -88,7 +88,7 @@ public class WarriorController : MonoBehaviour
 
         if(other.gameObject.tag == "needle")
         {
-           WarrorHP =- 5;
+            currentHP = - 5;
         }
     }
 }
