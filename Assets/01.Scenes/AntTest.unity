@@ -531,6 +531,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9013417355518824471, guid: 36d0e569455740c41aee33b08c294718,
+        type: 3}
+      propertyPath: cooltime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36d0e569455740c41aee33b08c294718, type: 3}
 --- !u!1 &1758509423
@@ -764,6 +769,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857661779132702542, guid: 6881d49d702058c418151a990875c7f1,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 14.506099
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857661779132702542, guid: 6881d49d702058c418151a990875c7f1,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 19.755844
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857661779132702542, guid: 6881d49d702058c418151a990875c7f1,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.79832315
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857661779132702542, guid: 6881d49d702058c418151a990875c7f1,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.32456398
       objectReference: {fileID: 0}
     - target: {fileID: 3857661780021839136, guid: 6881d49d702058c418151a990875c7f1,
         type: 3}
