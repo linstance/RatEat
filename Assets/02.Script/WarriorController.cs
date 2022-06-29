@@ -21,7 +21,7 @@ public class WarriorController : MonoBehaviour
     public static int WarrorHP; //워리어의 최대체력을 저장하는 변수
     public static int currentHP; //현재 워리어의 체력을 저장한는 변수
     public static int WarrorMP; //워리어의 마나를 저장하는 변수
-
+    public static int currentMP;//현재 워리어의 마나를 저장한는 변수
     void Start()
     {
         PlayerStat playerStat = new PlayerStat(10,150,3.1f, 2.0f, "Warrior");
@@ -29,6 +29,7 @@ public class WarriorController : MonoBehaviour
         WarrorHP = playerStat.PlayerHP;
         currentHP = playerStat.PlayerHP;
         WarrorMP = playerStat.PlayerMP;
+        currentMP = playerStat.PlayerMP;
         WarriorCritical = playerStat.PlayerCritical;
         playerStat.CurrentPlayer(); //플레이어의 현재 상태를 출력하는 함수
     }
@@ -65,6 +66,7 @@ public class WarriorController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))//마우스 왼쪽 버튼을 클릭했을 경우
         {
             WarriorHitMash.SetActive(true);
+            currentMP -= 10;
             Debug.Log("공격");
         }
         else if (Input.GetMouseButtonUp(0))
