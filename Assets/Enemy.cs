@@ -12,10 +12,14 @@ public class Enemy : MonoBehaviour
     public GameObject sting2;
     public Transform pos;
     // Start is called before the first frame update
+
+
     void Start()
     {
-        
+   
     }
+
+ 
 
     // Update is called once per frame
     void Update()
@@ -25,7 +29,7 @@ public class Enemy : MonoBehaviour
 
     public float cooltime;
     private float currenttime;
-    void FixedUpdate()
+     void FixedUpdate()
     {
         RaycastHit2D raycast = Physics2D.Raycast(transform.position, transform.right * -1, distance, isLayer);
         if(raycast.collider != null)
@@ -44,7 +48,7 @@ public class Enemy : MonoBehaviour
 
             }
             currenttime -= Time.deltaTime;
-        }
+        } 
 
     }
 }
