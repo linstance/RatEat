@@ -31,7 +31,7 @@ public class WarriorController : MonoBehaviour
         
 
          warriorAnimator = GetComponent<Animator>();
-        PlayerStat playerStat = new PlayerStat(10,150,3.1f, 2.0f, "Warrior");
+        PlayerStat playerStat = new PlayerStat(10,150,4f, 2.0f, "Warrior");
         WarriorSpeed = playerStat.PlayerSpeed;
         WarrorHP = playerStat.PlayerHP;
         currentHP = playerStat.PlayerHP;
