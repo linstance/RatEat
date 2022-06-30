@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
         {
             transform.Rotate(Vector3.forward * 3);
         }
-        rigid.AddForce(BossController.pos2);
+        rigid.AddForce(BossController.pos2 / 9);
 
     }
     void OnTriggerEnter2D(Collider2D collision)

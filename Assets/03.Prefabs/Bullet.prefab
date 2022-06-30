@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 4331250456014658347}
   - component: {fileID: 4331250456398282227}
   - component: {fileID: 4331250456398282226}
-  - component: {fileID: 4331250456398282225}
   - component: {fileID: 4331250456398282224}
-  - component: {fileID: 4331250456398282190}
+  - component: {fileID: 1778165075705738525}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -28,8 +27,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4331250456398282191}
-  m_LocalRotation: {x: 0, y: 0, z: -0.18959618, w: 0.9818622}
-  m_LocalPosition: {x: 1.5, y: 0.9, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.71471155, w: 0.6994194}
+  m_LocalPosition: {x: 0.19479252, y: 0.837615, z: 0}
   m_LocalScale: {x: 0.053375002, y: -0.05641095, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -106,22 +105,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &4331250456398282225
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4331250456398282191}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 20, y: 20}
-  m_Direction: 0
 --- !u!114 &4331250456398282224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,8 +118,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
---- !u!70 &4331250456398282190
-CapsuleCollider2D:
+--- !u!60 &1778165075705738525
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -145,9 +128,55 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 20.479998, y: 20.480001}
-  m_Direction: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 20.48, y: 20.48}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 5.7, y: -5.04}
+      - {x: 7.39, y: -4.5}
+      - {x: 7.96, y: -3.4399998}
+      - {x: 7.96, y: -1.5899999}
+      - {x: 6.87, y: -0.39}
+      - {x: 2.96, y: 0.69}
+      - {x: 1.73, y: 1.79}
+      - {x: 1.16, y: 2.9199998}
+      - {x: 0.59999996, y: 2.9099998}
+      - {x: 0.59999996, y: 6.29}
+      - {x: 0.58, y: 6.31}
+      - {x: 0.04, y: 7.98}
+      - {x: -0.35999998, y: 8.82}
+      - {x: -2.01, y: 9.13}
+      - {x: -3.33, y: 9.13}
+      - {x: -3.9599998, y: 8.599999}
+      - {x: -4.56, y: 7.43}
+      - {x: -4.5299997, y: 6.31}
+      - {x: -6.21, y: 6.31}
+      - {x: -7.64, y: 6.06}
+      - {x: -7.9199996, y: 4.87}
+      - {x: -7.9199996, y: 2.8899999}
+      - {x: -7.39, y: 2.3}
+      - {x: -6.8199997, y: 1.73}
+      - {x: -5.64, y: 1.17}
+      - {x: -2.86, y: 0.55}
+      - {x: -0.56, y: -1.67}
+      - {x: 0.01, y: -2.8}
+      - {x: 0.56, y: -2.79}
+      - {x: 0.56, y: -6.17}
+      - {x: 0.58, y: -6.19}
+      - {x: 0.81, y: -7.6}
+      - {x: 2, y: -7.8799996}
+      - {x: 3.4399998, y: -7.8799996}
+      - {x: 3.4299998, y: -7.8599997}
+      - {x: 4.5699997, y: -7.35}
+      - {x: 5.16, y: -6.75}
