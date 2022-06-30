@@ -10,12 +10,12 @@ public class WarriorController : MonoBehaviour
     //전사생쥐에 움직임 및 전사생쥐의 기본적인 동작에 관련된 스크립트
 {
    
-    private float inputX;
-    private float inputY;
+    private float inputX; // 움직임의 수직값
+    private float inputY; // 움직임의 높이값
 
     private bool AttackCheck = false; //현재 공격을 하고 있는지 체크 하는 변수
 
-    public Animator warriorAnimator;    //워리어 애니메이터
+    public Animator warriorAnimator; //워리어 애니메이터
 
     public static int currentDamage; //전사 생쥐가 현재 받을 데미지를 저장하는 변수
 
@@ -47,7 +47,6 @@ public class WarriorController : MonoBehaviour
         Move();
         Warriorattack();
 
-        
     }
 
 
@@ -105,11 +104,11 @@ public class WarriorController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            warriorAnimator.SetBool("IsneedleSword",true);
+            warriorAnimator.SetBool("IsAttack", true);
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-            warriorAnimator.SetBool("IsneedleSword", false);
+            warriorAnimator.SetBool("IsAttack", false);
         }
     }
 
