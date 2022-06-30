@@ -9,22 +9,29 @@ public class WarriorController : MonoBehaviour
 
     //전사생쥐에 움직임 및 전사생쥐의 기본적인 동작에 관련된 스크립트
 {
+   
+    private float inputX;
+    private float inputY;
+
     private bool AttackCheck = false; //현재 공격을 하고 있는지 체크 하는 변수
 
-    public GameObject WarriorHitMash = null; //플레이어의 공격범위 오브젝트를 저장하는 변수 
-
+    public Animator warriorAnimator;    //워리어 애니메이터
 
     public static int currentDamage; //전사 생쥐가 현재 받을 데미지를 저장하는 변수
 
     private float WarriorCritical; //워리어의 치명타율을 저장하는 변수
     private float WarriorSpeed; //워리어의 속도를 저장하는 변수
+
     public static int WarrorHP; //워리어의 최대체력을 저장하는 변수
     public static int currentHP; //현재 워리어의 체력을 저장한는 변수
     public static int WarrorMP; //워리어의 마나를 저장하는 변수
     public static int currentMP;//현재 워리어의 마나를 저장한는 변수
     void Start()
     {
-        PlayerStat playerStat = new PlayerStat(10,150,3.1f, 2.0f, "Warrior");
+        
+
+         warriorAnimator = GetComponent<Animator>();
+        PlayerStat playerStat = new PlayerStat(10,150,4f, 2.0f, "Warrior");
         WarriorSpeed = playerStat.PlayerSpeed;
         WarrorHP = playerStat.PlayerHP;
         currentHP = playerStat.PlayerHP;
@@ -40,43 +47,84 @@ public class WarriorController : MonoBehaviour
         Move();
         Warriorattack();
 
-        if(Input.GetKeyDown(KeyCode.H))
-        {
-            currentHP -= 1;
-            Debug.Log("체력감소");
-        }
-
-        if(currentHP == 0)
-        {
-            Debug.Log("죽음");
-        }
+        
     }
 
 
     public void Move()
     {
-        float inputX = Input.GetAxisRaw("Horizontal");
-        float inxputY = Input.GetAxisRaw("Vertical");
 
-        transform.Translate(new Vector2(inputX, inxputY) * WarriorSpeed * Time.deltaTime);
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            warriorAnimator.SetBool("IsMove", true);
+            transform.localEulerAngles = new Vector3(0, 0, 0);
+
+        }
+        else if(Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            warriorAnimator.SetBool("IsMove", false);
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            warriorAnimator.SetBool("IsMove", true);
+            transform.localEulerAngles = new Vector3(0, 180, 0);
+        }
+        else if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            warriorAnimator.SetBool("IsMove", false);
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            warriorAnimator.SetBool("IsMove", true);
+        }
+        else if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            warriorAnimator.SetBool("IsMove", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            warriorAnimator.SetBool("IsMove", true);
+        }
+        else if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            warriorAnimator.SetBool("IsMove", false);
+        }
+
+
+         inputX = Input.GetAxisRaw("Horizontal") * WarriorSpeed * Time.deltaTime;
+        inputY = Input.GetAxisRaw("Vertical") * WarriorSpeed * Time.deltaTime;
+        transform.position = new Vector2(transform.position.x + inputX, transform.position.y + inputY);
     }
 
     public void Warriorattack()
     {
-        if (Input.GetMouseButtonDown(0))//마우스 왼쪽 버튼을 클릭했을 경우
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            WarriorHitMash.SetActive(true);
-            currentMP -= 10;
-            Debug.Log("공격");
+            warriorAnimator.SetBool("IsneedleSword",true);
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-            WarriorHitMash.SetActive(false);
-        } 
-        
-        if(Input.GetMouseButtonDown(1))//마우스 오른쪽 버튼을 클릭했을 경우
+            warriorAnimator.SetBool("IsneedleSword", false);
+        }
+    }
+
+
+    private void HpTest()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
         {
-            Debug.Log("무기 체인지");
+            currentHP -= 1;
+            Debug.Log("체력감소");
+        }
+
+        if (currentHP == 0)
+        {
+            Debug.Log("죽음");
         }
     }
 
