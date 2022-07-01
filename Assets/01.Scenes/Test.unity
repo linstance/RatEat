@@ -178,6 +178,48 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 11}
   m_EdgeRadius: 0
+--- !u!1 &416735369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3062135273663257140, guid: b1d5e986390ec7844a367e7a8ab07475,
+    type: 3}
+  m_PrefabInstance: {fileID: 3062135273661687642}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &416735370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416735369}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e89e6eca8ec144a9392fe8461559c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BossHP: 100
+--- !u!4 &416735376 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3062135273663257131, guid: b1d5e986390ec7844a367e7a8ab07475,
+    type: 3}
+  m_PrefabInstance: {fileID: 3062135273661687642}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &416735377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416735369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b2cd01fb6b94c44781ee4abc0757ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rot_Speed: 4
+  HP: 100
+  pos: {fileID: 416735376}
+  bullet: {fileID: 4331250456398282191, guid: 5c0594839ee34bb49998ac617cc66e10, type: 3}
+  Delaytime: 0.1
 --- !u!1 &732975569
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,6 +865,11 @@ PrefabInstance:
       propertyPath: movespeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3062135273663257128, guid: b1d5e986390ec7844a367e7a8ab07475,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3062135273663257131, guid: b1d5e986390ec7844a367e7a8ab07475,
         type: 3}
       propertyPath: m_RootOrder
@@ -886,12 +933,12 @@ PrefabInstance:
     - target: {fileID: 8945526457924529143, guid: b1d5e986390ec7844a367e7a8ab07475,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.04
+      value: -30.64
       objectReference: {fileID: 0}
     - target: {fileID: 8945526457924529143, guid: b1d5e986390ec7844a367e7a8ab07475,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.46
+      value: -26.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1d5e986390ec7844a367e7a8ab07475, type: 3}
