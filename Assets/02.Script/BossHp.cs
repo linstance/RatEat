@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossHp : MonoBehaviour
 {
     [SerializeField]
-    private float BossHP = 100;
+    public float BossHP = 100;
     void Start()
     {
         
