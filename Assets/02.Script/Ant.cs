@@ -10,8 +10,6 @@ public class Ant : MonoBehaviour
     private Vector2 movement;// Start is called before the first frame update
 
 
-    public GameObject target;
-
     Animator animator;
     void Start()
     {
@@ -44,7 +42,7 @@ public class Ant : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = player.position - transform.position;
+        /* Vector3 direction = player.position - transform.position;
         //float angle2 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
        // rb.rotation = angle2;
         direction.Normalize();
@@ -54,7 +52,17 @@ public class Ant : MonoBehaviour
         Vector3 dir = target.transform.position - transform.position;
 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.up); */
+
+
+        Vector3 direction = player.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        
+        rb.rotation = angle;
+        direction.Normalize();
+        movement = direction;
+
+        
 
 
     }

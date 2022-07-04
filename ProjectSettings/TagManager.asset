@@ -7,6 +7,8 @@ TagManager:
   - bee
   - Monstre
   - needle
+  - BorderLine
+  - Line
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Monster
   - 
   - 
   - 

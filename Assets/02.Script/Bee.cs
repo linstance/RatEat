@@ -21,6 +21,9 @@ public class Bee : MonoBehaviour
         rb.rotation = angle;
         direction.Normalize();
         movement = direction;
+
+        
+
     }
     private void FixedUpdate()
     {
