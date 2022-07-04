@@ -40,7 +40,7 @@ public class BossPattern : MonoBehaviour
             GameObject temp = Instantiate(bullet);
 
             //2초후 자동 삭제
-            Destroy(temp, 2f);
+            Destroy(temp, 1f);
 
             //총알 생성 위치를 머즐 입구로 한다.
             temp.transform.position = transform.position;
@@ -89,8 +89,8 @@ public class BossPattern : MonoBehaviour
             //총알 생성
             GameObject temp = Instantiate(bullet);
 
-            //2초마다 삭제
-            Destroy(temp, 2f);
+            //1초마다 삭제
+            Destroy(temp, 1f);
 
             //총알 생성 위치를 (0,0) 좌표로 한다.
             temp.transform.position = transform.position;
