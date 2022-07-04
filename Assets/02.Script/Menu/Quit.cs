@@ -1,13 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Menu : MonoBehaviour
+public class Quit : MonoBehaviour
 {
     // Start is called before the first frame update
-
-
     void Start()
     {
         
@@ -21,12 +18,6 @@ public class Menu : MonoBehaviour
 
     public void ActivePauseBt()
     {
-        Time.timeScale = 0;
-    }
-
-    public void PlayBtn()
-    {
-        SceneManager.LoadScene("Title");
+        Application.Quit();
     }
 }
-  
