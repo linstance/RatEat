@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
+
+
 
 public class BossHpBar : MonoBehaviour
 {
     Image BHP;
     public TextMeshProUGUI BHPText;
-    public int BMaxHp;
-    public int BNowHp;
+    public float BMaxHp;
+    public float BNowHp; 
     // Start is called before the first frame update
     void Start()
     {
@@ -28,4 +31,6 @@ public class BossHpBar : MonoBehaviour
             BNowHp -= 10;
         }
     }
+
+
 }

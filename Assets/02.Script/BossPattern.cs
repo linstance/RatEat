@@ -18,10 +18,11 @@ public class BossPattern : MonoBehaviour
     private float ShotTime;
     int isDeal;
 
-    private void Start()
-    {
-        
-    }
+    private BossHpBar bossHpBar;
+     private void Awake()
+     {
+        bossHpBar = GetComponent<BossHpBar>();
+     }
 
 
     private void Update()
@@ -31,7 +32,7 @@ public class BossPattern : MonoBehaviour
         //회전
         transform.Rotate(Vector3.forward * rot_Speed * 100 * Time.deltaTime);
 
-        if (ShotTime >= Delaytime && HP >= 100)
+        if (ShotTime >= Delaytime && bossHpBar.BNowHp <= bossHpBar.BMaxHp * 1f )
         {
             ShotTime = 0;
  
@@ -52,7 +53,7 @@ public class BossPattern : MonoBehaviour
 
         }
 
-        if( HP < 100 && !A)
+        if(bossHpBar.BNowHp <= bossHpBar.BMaxHp * 0.5f && !A)
         {
             
             ShotTime = 0;
@@ -102,7 +103,7 @@ public class BossPattern : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4f);
         isDeal = 0;
     }
 
