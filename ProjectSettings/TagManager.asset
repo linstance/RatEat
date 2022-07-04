@@ -9,6 +9,8 @@ TagManager:
   - needle
   - BorderLine
   - Line
+  - Boundary
+  - needleSword
   layers:
   - Default
   - TransparentFX

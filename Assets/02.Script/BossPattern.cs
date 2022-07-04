@@ -18,10 +18,11 @@ public class BossPattern : MonoBehaviour
     private float ShotTime;
     int isDeal;
 
-    private void Start()
-    {
-        
-    }
+    private BossHpBar bossHpBar;
+     private void Awake()
+     {
+        bossHpBar = GetComponent<BossHpBar>();
+     }
 
 
     private void Update()
@@ -31,7 +32,7 @@ public class BossPattern : MonoBehaviour
         //회전
         transform.Rotate(Vector3.forward * rot_Speed * 100 * Time.deltaTime);
 
-        if (ShotTime >= Delaytime && HP >= 100)
+        if (ShotTime >= Delaytime && bossHpBar.BNowHp <= bossHpBar.BMaxHp * 1f )
         {
             ShotTime = 0;
  
@@ -40,7 +41,7 @@ public class BossPattern : MonoBehaviour
             GameObject temp = Instantiate(bullet);
 
             //2초후 자동 삭제
-            Destroy(temp, 2f);
+            Destroy(temp, 1f);
 
             //총알 생성 위치를 머즐 입구로 한다.
             temp.transform.position = transform.position;
@@ -52,7 +53,7 @@ public class BossPattern : MonoBehaviour
 
         }
 
-        if( HP < 100 && !A)
+        if(bossHpBar.BNowHp <= bossHpBar.BMaxHp * 0.5f && !A)
         {
             
             ShotTime = 0;
@@ -89,8 +90,8 @@ public class BossPattern : MonoBehaviour
             //총알 생성
             GameObject temp = Instantiate(bullet);
 
-            //2초마다 삭제
-            Destroy(temp, 2f);
+            //1초마다 삭제
+            Destroy(temp, 1f);
 
             //총알 생성 위치를 (0,0) 좌표로 한다.
             temp.transform.position = transform.position;
@@ -102,7 +103,7 @@ public class BossPattern : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4f);
         isDeal = 0;
     }
 
