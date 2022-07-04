@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/08.Tilemap/Yard/Yard.prefab.meta
 guid: b40c680ffe9002547af23d396e1948da
 PrefabImporter:
+========
+guid: 4d6a28ae06fcb1947967126f8fa90e49
+NativeFormatImporter:
+>>>>>>>> a67b320947f46f6ff68c84667b3ae396e002dedf:Assets/07.Animation/Boss/BossAnimationController.controller.meta
   externalObjects: {}
+  mainObjectFileID: 9100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
