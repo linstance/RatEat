@@ -21,7 +21,11 @@ public class BossHpBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        BHP.fillAmount = BNowHp / 10f;
+        BHP.fillAmount = BNowHp / 100f;
         BHPText.text = BNowHp.ToString() + "/" + BMaxHp.ToString();
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            BNowHp -= 10;
+        }
     }
 }
