@@ -139,5 +139,9 @@ public class WarriorController : MonoBehaviour
         {
            currentHP -= 1;
         }
+        if(other.gameObject.tag == "bee")
+        {
+            currentHP -= 1;
+        }
     }
 }
