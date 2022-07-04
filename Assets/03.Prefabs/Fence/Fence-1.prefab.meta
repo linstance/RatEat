@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/03.Prefabs/Fence/Fence-1.prefab.meta
 guid: 92ffd0c3224650b4c95b4ad3604e82e2
 PrefabImporter:
-========
-guid: db6669c673f9f514db6c47302e70d7ff
-NativeFormatImporter:
->>>>>>>> a67b320947f46f6ff68c84667b3ae396e002dedf:Assets/07.Animation/Boss/Boss_idle.anim.meta
   externalObjects: {}
-  mainObjectFileID: 7400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
