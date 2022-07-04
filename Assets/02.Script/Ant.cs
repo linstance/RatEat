@@ -10,9 +10,9 @@ public class Ant : MonoBehaviour
     private Vector2 movement;// Start is called before the first frame update
 
 
+    public GameObject target;
+
     Animator animator;
-
-
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
@@ -45,10 +45,18 @@ public class Ant : MonoBehaviour
     void Update()
     {
         Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
+        //float angle2 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+       // rb.rotation = angle2;
         direction.Normalize();
         movement = direction;
+
+        //추가
+        Vector3 dir = target.transform.position - transform.position;
+
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
+
+
     }
     private void FixedUpdate()
     {
@@ -59,5 +67,5 @@ public class Ant : MonoBehaviour
         rb.MovePosition((Vector2)transform.position + (direction * movespeed * Time.deltaTime));
     }
 
-
-}
+  
+    }
