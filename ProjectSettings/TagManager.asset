@@ -11,6 +11,8 @@ TagManager:
   - Line
   - Boundary
   - needleSword
+  - BronzeSword
+  - Boss
   layers:
   - Default
   - TransparentFX

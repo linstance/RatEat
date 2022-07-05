@@ -127,6 +127,83 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3062135273661687642}
   m_PrefabAsset: {fileID: 0}
+--- !u!60 &416735374
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416735369}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 20.48, y: 20.48}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.72999996, y: -8.17}
+      - {x: 1.27, y: -8.71}
+      - {x: 5.27, y: -8.71}
+      - {x: 6.8399997, y: -6.5899997}
+      - {x: 7.81, y: -4.42}
+      - {x: 8.33, y: -3.9299998}
+      - {x: 8.33, y: -1.64}
+      - {x: 6.89, y: 0.66999996}
+      - {x: 5.17, y: 1.77}
+      - {x: 3.47, y: 1.56}
+      - {x: 3.4499998, y: 1.54}
+      - {x: 2.9299998, y: 1.03}
+      - {x: 2.9099998, y: 1.01}
+      - {x: 1.8499999, y: 1.03}
+      - {x: 1.3399999, y: 1.03}
+      - {x: 1.3399999, y: 6.39}
+      - {x: 1.3199999, y: 6.41}
+      - {x: 0.81, y: 7.48}
+      - {x: -0.55, y: 7.48}
+      - {x: -1.52, y: 6.0299997}
+      - {x: -1.88, y: 7.48}
+      - {x: -3.01, y: 7.48}
+      - {x: -4.11, y: 5.3199997}
+      - {x: -4.63, y: 4.83}
+      - {x: -5.73, y: 3.72}
+      - {x: -6.24, y: 2.62}
+      - {x: -7.2999997, y: 2.1}
+      - {x: -7.6699996, y: 2.23}
+      - {x: -7.8599997, y: 1.54}
+      - {x: -7.8599997, y: 0.14999999}
+      - {x: -7.3399997, y: -0.099999994}
+      - {x: -6.81, y: -0.63}
+      - {x: -4.68, y: -0.69}
+      - {x: -4.63, y: -3.8899999}
+      - {x: -4.0699997, y: -4.4}
+      - {x: -3.55, y: -4.4}
+      - {x: -4.1, y: -6.49}
+      - {x: -4.66, y: -7.0499997}
+      - {x: -4.66, y: -8.17}
+      - {x: -4.12, y: -8.71}
+      - {x: -0.29999998, y: -8.71}
+      - {x: -0.28, y: -8.69}
+      - {x: 0.26, y: -8.2}
+      - {x: 0.72999996, y: -6.5499997}
+    - - {x: 7.27, y: -3.33}
+      - {x: 7.75, y: -3.33}
+      - {x: 7.75, y: -3.81}
+      - {x: 7.27, y: -3.81}
+    - - {x: -5.65, y: 2.59}
+      - {x: -5.18, y: 2.59}
+      - {x: -5.18, y: 2.11}
+      - {x: -5.65, y: 2.11}
 --- !u!4 &416735376 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3062135273663257131, guid: b1d5e986390ec7844a367e7a8ab07475,
@@ -626,6 +703,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1981415326 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5498532590239517125, guid: 6881d49d702058c418151a990875c7f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1467802643}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1981415330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981415326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bdf7b84fd84fb42ba539c659faf5f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2079967103
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,7 +757,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 200}
+  m_AnchoredPosition: {x: 0, y: 432}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2079967105
@@ -814,6 +909,11 @@ PrefabInstance:
     - target: {fileID: 3062135273663257140, guid: b1d5e986390ec7844a367e7a8ab07475,
         type: 3}
       propertyPath: m_Name
+      value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062135273663257140, guid: b1d5e986390ec7844a367e7a8ab07475,
+        type: 3}
+      propertyPath: m_TagString
       value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 3062135273663257141, guid: b1d5e986390ec7844a367e7a8ab07475,
