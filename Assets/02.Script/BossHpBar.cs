@@ -11,8 +11,8 @@ public class BossHpBar : MonoBehaviour
 {
     Image BHP;
     public TextMeshProUGUI BHPText;
-    public float BMaxHp;
-    public float BNowHp; 
+    public static float BMaxHp;
+    public static float BNowHp; 
     // Start is called before the first frame update
     void Start()
     {

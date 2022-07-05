@@ -33,10 +33,8 @@ public class Bullet : MonoBehaviour
 
         if (collision.CompareTag("Player") )
         {
-            Debug.Log("hit");
-            //collision.GetComponent<WarriorController>().Takedamage(damage);//총알이 PLayer와 닿으면 데미지가 들어가게 설정
 
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 
