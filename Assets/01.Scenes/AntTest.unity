@@ -1212,22 +1212,22 @@ PrefabInstance:
     - target: {fileID: 3857661779132702542, guid: 6881d49d702058c418151a990875c7f1,
         type: 3}
       propertyPath: m_Size.x
-      value: 15
+      value: 5.639955
       objectReference: {fileID: 0}
     - target: {fileID: 3857661779132702542, guid: 6881d49d702058c418151a990875c7f1,
         type: 3}
       propertyPath: m_Size.y
-      value: 14.996939
+      value: 12.572273
       objectReference: {fileID: 0}
     - target: {fileID: 3857661779132702542, guid: 6881d49d702058c418151a990875c7f1,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0
+      value: -1.5782044
       objectReference: {fileID: 0}
     - target: {fileID: 3857661779132702542, guid: 6881d49d702058c418151a990875c7f1,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.44335175
+      value: -1.2712281
       objectReference: {fileID: 0}
     - target: {fileID: 3857661779132702542, guid: 6881d49d702058c418151a990875c7f1,
         type: 3}
@@ -1293,6 +1293,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498532590239517125, guid: 6881d49d702058c418151a990875c7f1,
+        type: 3}
+      propertyPath: m_TagString
+      value: BronzeSword
+      objectReference: {fileID: 0}
+    - target: {fileID: 5521824246414419504, guid: 6881d49d702058c418151a990875c7f1,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6881d49d702058c418151a990875c7f1, type: 3}
