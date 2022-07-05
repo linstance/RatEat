@@ -8,7 +8,7 @@ public class Ant : MonoBehaviour
     public float movespeed = 5f;
     private Rigidbody2D rb;
     private Vector2 movement;// Start is called before the first frame update
-    private int antHP = 6;
+    public static int antHP = 6;
 
 
     Animator animator;
@@ -38,7 +38,7 @@ public class Ant : MonoBehaviour
             animator.SetBool("IsAntHit", false);
         }
 
-        if(collision.gameObject.tag == "needleSword")
+        if(collision.gameObject.tag == "BronzeSword")
         {
             antHP -= 2;
         }
