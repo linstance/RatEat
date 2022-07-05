@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Box
+  m_Name: Box02
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,10 +21,6 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: eb0f33a59049e5c4b85145d384e4766b, type: 3}
-    - time: 0.033333335
-      value: {fileID: 21300000, guid: 683e6a00b14e09e4f903d7fca9879d87, type: 3}
-    - time: 0.33333334
-      value: {fileID: 21300000, guid: 2360c53246c9551428cef67d96883fc8, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -45,14 +41,12 @@ AnimationClip:
       isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: 21300000, guid: eb0f33a59049e5c4b85145d384e4766b, type: 3}
-    - {fileID: 21300000, guid: 683e6a00b14e09e4f903d7fca9879d87, type: 3}
-    - {fileID: 21300000, guid: 2360c53246c9551428cef67d96883fc8, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.35000002
+    m_StopTime: 0.016666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

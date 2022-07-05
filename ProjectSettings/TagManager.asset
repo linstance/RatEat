@@ -56,3 +56,6 @@ TagManager:
   - name: Monster
     uniqueID: 3017964509
     locked: 0
+  - name: item
+    uniqueID: 691617701
+    locked: 0
