@@ -23,7 +23,7 @@ public class ScenesManger : MonoBehaviour
 
     public void PlayBtn()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Yard");
     }
 
     public void HomeBtn()
