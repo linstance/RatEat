@@ -26,11 +26,6 @@ public class BossHpBar : MonoBehaviour
     {
         BHP.fillAmount = BNowHp / 100f;
         BHPText.text = BNowHp.ToString() + "/" + BMaxHp.ToString();
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            BNowHp -= 10;
-        }
+        
     }
-
-
 }
