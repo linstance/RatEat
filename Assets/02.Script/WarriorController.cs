@@ -22,6 +22,7 @@ public class WarriorController : MonoBehaviour
     private bool AttackCheck = false; //현재 공격을 하고 있는지 체크 하는 변수
 
     public Animator warriorAnimator; //워리어 애니메이터
+    public Animator effactAnimator; //이펙트 애니메이터
 
     public static int currentDamage; //전사 생쥐가 현재 받을 데미지를 저장하는 변수
 
@@ -32,6 +33,9 @@ public class WarriorController : MonoBehaviour
     public static int currentHP; //현재 워리어의 체력을 저장한는 변수
     public static int WarrorMP; //워리어의 마나를 저장하는 변수
     public static int currentMP;//현재 워리어의 마나를 저장한는 변수
+
+    public GameObject[] Weapon;
+
     void Start()
     {
         
@@ -113,10 +117,12 @@ public class WarriorController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             warriorAnimator.SetBool("IsAttack", true);
+            effactAnimator.SetBool("IsEffact", true);
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             warriorAnimator.SetBool("IsAttack", false);
+            effactAnimator.SetBool("IsEffact", false);
         }
     }
 
@@ -143,11 +149,7 @@ public class WarriorController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "HitMash")
-        {
-           // WarrorHP =- currentDamage;
-        }
-
+        
         if(other.gameObject.tag == "needle")
         {
            currentHP -= 1;
@@ -156,8 +158,30 @@ public class WarriorController : MonoBehaviour
         {
             currentHP -= 1;
         }
+
     }
-    
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "BronzeSword" && Input.GetKey(KeyCode.F))
+        {
+            Weapon[0].SetActive(true);
+
+            Weapon[1].SetActive(false);
+            Weapon[2].SetActive(false);
+
+        }
+
+        if (other.gameObject.tag == "needleSword" && Input.GetKey(KeyCode.F))
+        {
+            Weapon[2].SetActive(true);
+
+            Weapon[0].SetActive(false);
+            Weapon[1].SetActive(false);
+        }
+    }
+
+
     public void OnDieEvent()
     {
         SceneManager.LoadScene("Game Over");

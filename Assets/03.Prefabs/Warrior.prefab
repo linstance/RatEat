@@ -414,6 +414,11 @@ MonoBehaviour:
   nextSceneName: 
   isDie: 0
   warriorAnimator: {fileID: 3857661779132702543}
+  Weapon:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!95 &3857661779132702543
 Animator:
   serializedVersion: 3
@@ -443,7 +448,6 @@ GameObject:
   m_Component:
   - component: {fileID: 184461280428225460}
   - component: {fileID: 2304081072576688924}
-  - component: {fileID: 5521824246414419504}
   - component: {fileID: 1683703214552214504}
   m_Layer: 0
   m_Name: BronzeSword
@@ -516,42 +520,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &5521824246414419504
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5498532590239517125}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.0000034426412, y: 0.11001083}
-      - {x: -0.000008508432, y: 0.119931474}
-      - {x: -0.010065322, y: 0.12001255}
-      - {x: -0.01000645, y: 0.099265486}
-      - {x: -0.010004853, y: -0.049938835}
-      - {x: -0.020075226, y: -0.05008393}
-      - {x: -0.019927256, y: -0.060049616}
-      - {x: 0.019993642, y: -0.059906658}
-      - {x: 0.020016866, y: -0.049962718}
-      - {x: 0.010038042, y: -0.050079014}
-      - {x: 0.009962943, y: 0.11002057}
 --- !u!114 &1683703214552214504
 MonoBehaviour:
   m_ObjectHideFlags: 0
