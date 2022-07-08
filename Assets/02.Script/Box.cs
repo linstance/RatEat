@@ -6,6 +6,7 @@ public class Box : MonoBehaviour
 {
     public GameObject Sword;
     public GameObject Sword2;
+    public GameObject Sword3;
     Animator animator;
 
     int r;
@@ -19,11 +20,12 @@ public class Box : MonoBehaviour
     void Update()
     {
        
-            r = Random.Range(0, 2);
+            r = Random.Range(0, 3);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+   
         if (other.gameObject.tag == "Player")
         {
             animator.SetBool("Open", true);
@@ -31,13 +33,22 @@ public class Box : MonoBehaviour
             
             if (r == 0)
             {
+             
                 Sword.gameObject.SetActive(true);
                 Sword2.gameObject.SetActive(false);
+                Sword3.gameObject.SetActive(false);
             }
             if (r == 1)
             {
                 Sword2.gameObject.SetActive(true);
                 Sword.gameObject.SetActive(false);
+                Sword3.gameObject.SetActive(false);
+            }
+            if (r == 2)
+            {
+                Sword3.gameObject.SetActive(true);
+                Sword.gameObject.SetActive(false);
+                Sword2.gameObject.SetActive(false);
             }
         }
     }
@@ -49,6 +60,7 @@ public class Box : MonoBehaviour
             animator.SetBool("Open", false);
                 Sword.gameObject.SetActive(false);
                 Sword2.gameObject.SetActive(false);
+                Sword3.gameObject.SetActive(false);
         }
 
         }

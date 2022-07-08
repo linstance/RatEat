@@ -16,6 +16,7 @@ TagManager:
   - CloseGate
   - OpenGate
   - IceSword
+  - Arm
   layers:
   - Default
   - TransparentFX
