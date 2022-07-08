@@ -166,7 +166,7 @@ public class WarriorController : MonoBehaviour
         if (other.gameObject.tag == "BronzeSword" && Input.GetKey(KeyCode.F))
         {
             Weapon[0].SetActive(true);
-
+            
             Weapon[1].SetActive(false);
             Weapon[2].SetActive(false);
 

@@ -16,6 +16,7 @@ TagManager:
   - CloseGate
   - OpenGate
   - IceSword
+  - Arm
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - 
   - Monster
   - needle
-  - 
+  - player
   - 
   - 
   - 
