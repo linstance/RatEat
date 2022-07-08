@@ -7,6 +7,7 @@ public class Box : MonoBehaviour
     public GameObject Sword;
     public GameObject Sword2;
     public GameObject Sword3;
+    public GameObject ani;
     Animator animator;
 
     int r;
@@ -33,34 +34,48 @@ public class Box : MonoBehaviour
             
             if (r == 0)
             {
-             
+                
+                ani.gameObject.SetActive(true);
                 Sword.gameObject.SetActive(true);
                 Sword2.gameObject.SetActive(false);
                 Sword3.gameObject.SetActive(false);
             }
             if (r == 1)
             {
+                ani.gameObject.SetActive(true);
                 Sword2.gameObject.SetActive(true);
                 Sword.gameObject.SetActive(false);
                 Sword3.gameObject.SetActive(false);
             }
             if (r == 2)
             {
+                ani.gameObject.SetActive(true);
                 Sword3.gameObject.SetActive(true);
                 Sword.gameObject.SetActive(false);
                 Sword2.gameObject.SetActive(false);
             }
         }
     }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player" && Input.GetKey(KeyCode.F))
+        {
+            Sword.gameObject.SetActive(false);
+            Sword2.gameObject.SetActive(false);
+            Sword3.gameObject.SetActive(false);
+        }
 
-    private void OnTriggerExit2D(Collider2D other)
+    }
+
+   private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            animator.SetBool("Open", false);
+            //animator.SetBool("Open", false);
                 Sword.gameObject.SetActive(false);
                 Sword2.gameObject.SetActive(false);
                 Sword3.gameObject.SetActive(false);
+           // ani.gameObject.SetActive(false);
         }
 
         }
