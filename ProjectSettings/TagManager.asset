@@ -15,6 +15,7 @@ TagManager:
   - Boss
   - CloseGate
   - OpenGate
+  - IceSword
   layers:
   - Default
   - TransparentFX
