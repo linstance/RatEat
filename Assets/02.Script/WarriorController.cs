@@ -10,12 +10,11 @@ public class WarriorController : MonoBehaviour
 
     //전사생쥐에 움직임 및 전사생쥐의 기본적인 동작에 관련된 스크립트
 {
-    [SerializeField]
-    private string nextSceneName;
-    [SerializeField]
-    private bool isDie = false;
     
-   
+
+    private float curTime;
+    public float coolTime = 0.5f;
+
     private float inputX; // 움직임의 수직값
     private float inputY; // 움직임의 높이값
 
@@ -35,6 +34,9 @@ public class WarriorController : MonoBehaviour
     public static int currentMP;//현재 워리어의 마나를 저장한는 변수
 
     public GameObject[] Weapon;
+
+    public Transform pos;
+    public Vector2 boxSize;
 
     void Start()
     {
@@ -57,7 +59,7 @@ public class WarriorController : MonoBehaviour
         Move();
         CallDie();
         Warriorattack();
-        if (isDie == true) return;
+       
 
     }
 
@@ -65,7 +67,7 @@ public class WarriorController : MonoBehaviour
     public void Move()
     {
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             warriorAnimator.SetBool("IsMove", true);
             transform.localEulerAngles = new Vector3(0, 0, 0);
@@ -77,7 +79,7 @@ public class WarriorController : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             warriorAnimator.SetBool("IsMove", true);
             transform.localEulerAngles = new Vector3(0, 180, 0);
@@ -88,7 +90,7 @@ public class WarriorController : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             warriorAnimator.SetBool("IsMove", true);
         }
@@ -97,7 +99,7 @@ public class WarriorController : MonoBehaviour
             warriorAnimator.SetBool("IsMove", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             warriorAnimator.SetBool("IsMove", true);
         }
@@ -114,16 +116,43 @@ public class WarriorController : MonoBehaviour
 
     public void Warriorattack()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+
+        if(curTime <= 0)
         {
-            warriorAnimator.SetBool("IsAttack", true);
-            effactAnimator.SetBool("IsEffact", true);
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
+                foreach(Collider2D collider in collider2Ds)
+                {
+                    Debug.Log(collider.tag);
+                }
+
+                curTime = coolTime;
+
+
+                warriorAnimator.SetBool("IsAttack", true);
+                AttackCheck = true;
+
+                if(AttackCheck == true)
+                {
+                   // effactAnimator.SetBool("IsEffact", true);
+                }
+               
+            }
         }
-        else if (Input.GetKeyUp(KeyCode.LeftControl))
+       else
         {
+            curTime -= Time.deltaTime;
+            AttackCheck = false;
             warriorAnimator.SetBool("IsAttack", false);
-            effactAnimator.SetBool("IsEffact", false);
+         
+            if(AttackCheck == false)
+            {
+                //effactAnimator.SetBool("IsEffact", false);
+            }
+
         }
+
     }
 
 
@@ -141,9 +170,7 @@ public class WarriorController : MonoBehaviour
     {
         if (currentHP <= 0)
         {
-            warriorAnimator.SetBool("isDie", true);
-
-            OnDieEvent();
+            warriorAnimator.SetBool("isDie", true); 
         }
     }
 
@@ -190,9 +217,11 @@ public class WarriorController : MonoBehaviour
 
     }
 
-
-    public void OnDieEvent()
+    private void OnDrawGizmos()
     {
-        SceneManager.LoadScene("Game Over");
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(pos.position, boxSize);
     }
+
+    
 }
