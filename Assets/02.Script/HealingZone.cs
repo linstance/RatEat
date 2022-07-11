@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 public class HealingZone : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(collision2D collision )
     {
         if(collision.CompareTag("Player"))
         {
@@ -18,6 +17,10 @@ public class HealingZone : MonoBehaviour
             else
                 WarriorController.currentMP += 1;
             
+            if ( WarriorController.currentHP == 10 && WarriorController.currentMP == 150)
+            {
+                anim.StopPlayBack("HealingZone");
+            }
         }
 
 
