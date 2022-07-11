@@ -5,48 +5,50 @@ using UnityEngine;
 public class Ant_01 : MonoBehaviour
 {
 
-    private GameObject Target;  //타겟
+    private GameObject target;  //타겟
 
-    public Collider2D AttackMash;   //공격 범위
-    public Collider2D TrackingMash; //추적 범위
-    public Transform Ant;
+    public float speed; //이동속도
+    public float minimumDistance;   //추적 범위
 
-    // Start is called before the first frame update
-    void Start()
+    public Animator AntAnimator;
+
+    private void Start()
     {
-        Target = GameObject.Find("Player");
+        target = GameObject.FindWithTag("Player");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
 
-        float Distans = Vector3.Distance(Target.transform.position, Ant.position);
-         
-        
+        MoveAttack();
+
+        Direction();
     }
 
-    private void OnTriggerEnter2D(Collider2D other) //충돌시 1회 출력
+
+    void MoveAttack()
     {
-        if(other.gameObject.tag == "Player")
+        if (Vector2.Distance(transform.position, target.transform.position) > minimumDistance)
         {
-
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+            AntAnimator.SetBool("IsAntAttack", false);
+        }
+        else
+        {
+            AntAnimator.SetBool("IsAntAttack", true);
         }
     }
 
-    private void OnTriggerStay2D(Collider2D others) //충돌 중일때 지속적으로 출력
+    void Direction()
     {
-        
+        if (target.transform.position.x > transform.position.x)
+        {
+            transform.localEulerAngles = new Vector3(0, 180, 0);
+        }
+        else if (target.transform.position.x < transform.position.x)
+        {
+            transform.localEulerAngles = new Vector3(0, 0, 0);
+        }
     }
 
-
-    public void AntMove()
-    {
-        
-    }
-
-    public void AntAttack()
-    {
-
-    }
 }
