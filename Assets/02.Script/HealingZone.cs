@@ -8,9 +8,19 @@ public class HealingZone : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            WarriorController.WarrorHP += 100;
-            WarriorController.WarrorMP += 100;
+            if(WarriorController.currentHP == 10)
+            WarriorController.currentHP += 0;
+            else
+            WarriorController.currentHP += 1;
+
+            if (WarriorController.currentMP == 150)
+                WarriorController.currentMP += 0;
+            else
+                WarriorController.currentMP += 1;
+            
         }
+
+
     }
 
 }

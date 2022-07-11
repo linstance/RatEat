@@ -21,7 +21,6 @@ public class Ant_01 : MonoBehaviour
     {
 
         MoveAttack();
-
         Direction();
     }
 
