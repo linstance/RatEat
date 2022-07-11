@@ -15,54 +15,63 @@ public class Box : MonoBehaviour
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
+        r = Random.Range(0, 3);
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-            r = Random.Range(0, 3);
+
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-   
+        
+
         if (other.gameObject.tag == "Player")
         {
+
             animator.SetBool("Open", true);
             Sword.gameObject.SetActive(true);
             
-            if (r == 0)
             {
-                
-                ani.gameObject.SetActive(true);
-                Sword.gameObject.SetActive(true);
-                Sword2.gameObject.SetActive(false);
-                Sword3.gameObject.SetActive(false);
+                if (r == 0)
+                {
+
+                    ani.gameObject.SetActive(true);
+                    Sword.gameObject.SetActive(true);
+                    Sword2.gameObject.SetActive(false);
+                    Sword3.gameObject.SetActive(false);
+                }
+                if (r == 1)
+                {
+                    ani.gameObject.SetActive(true);
+                    Sword2.gameObject.SetActive(true);
+                    Sword.gameObject.SetActive(false);
+                    Sword3.gameObject.SetActive(false);
+                }
+                if (r == 2)
+                {
+                    ani.gameObject.SetActive(true);
+                    Sword3.gameObject.SetActive(true);
+                    Sword.gameObject.SetActive(false);
+                    Sword2.gameObject.SetActive(false);
+                }
             }
-            if (r == 1)
-            {
-                ani.gameObject.SetActive(true);
-                Sword2.gameObject.SetActive(true);
-                Sword.gameObject.SetActive(false);
-                Sword3.gameObject.SetActive(false);
-            }
-            if (r == 2)
-            {
-                ani.gameObject.SetActive(true);
-                Sword3.gameObject.SetActive(true);
-                Sword.gameObject.SetActive(false);
-                Sword2.gameObject.SetActive(false);
-            }
+            
+
+            
+
         }
     }
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player" && Input.GetKey(KeyCode.F))
         {
-            Sword.gameObject.SetActive(false);
-            Sword2.gameObject.SetActive(false);
-            Sword3.gameObject.SetActive(false);
+            Destroy(Sword);
+            Destroy(Sword2);
+            Destroy(Sword3);
         }
 
     }
@@ -71,11 +80,20 @@ public class Box : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            //animator.SetBool("Open", false);
-                Sword.gameObject.SetActive(false);
-                Sword2.gameObject.SetActive(false);
-                Sword3.gameObject.SetActive(false);
-           // ani.gameObject.SetActive(false);
+            
+               if(Input.GetKey(KeyCode.F))
+            {
+                Destroy(Sword);
+                Destroy(Sword2);
+                Destroy(Sword3);
+            }
+               else
+            {
+
+
+            }
+            
+
         }
 
         }
