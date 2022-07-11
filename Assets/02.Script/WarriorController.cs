@@ -119,7 +119,7 @@ public class WarriorController : MonoBehaviour
 
         if(curTime <= 0)
         {
-            if (Input.GetKey(KeyCode.LeftControl))
+            if (Input.GetKeyDown(KeyCode.LeftControl))
             {
                 Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
                 foreach(Collider2D collider in collider2Ds)
@@ -135,7 +135,7 @@ public class WarriorController : MonoBehaviour
 
                 if(AttackCheck == true)
                 {
-                   // effactAnimator.SetBool("IsEffact", true);
+                    effactAnimator.SetBool("IsEffact", true);
                 }
                
             }
@@ -148,7 +148,7 @@ public class WarriorController : MonoBehaviour
          
             if(AttackCheck == false)
             {
-                //effactAnimator.SetBool("IsEffact", false);
+                effactAnimator.SetBool("IsEffact", false);
             }
 
         }
