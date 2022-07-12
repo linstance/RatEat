@@ -59,7 +59,7 @@ public class WarriorController : MonoBehaviour
         Move();
         CallDie();
         Warriorattack();
-
+        MpTest();
         HpTest();
     }
 
@@ -165,6 +165,14 @@ public class WarriorController : MonoBehaviour
         }
     }
 
+    private void  MpTest()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            currentMP -= 10;
+            Debug.Log("마나감소");
+        }
+    }
 
     public void CallDie()
     {
