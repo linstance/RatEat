@@ -21,7 +21,6 @@ public class WarriorController : MonoBehaviour
     private bool AttackCheck = false; //현재 공격을 하고 있는지 체크 하는 변수
 
     public Animator warriorAnimator; //워리어 애니메이터
-    public Animator effactAnimator; //이펙트 애니메이터
 
     public static int currentDamage; //전사 생쥐가 현재 받을 데미지를 저장하는 변수
 
@@ -56,12 +55,12 @@ public class WarriorController : MonoBehaviour
     
     void Update()
     {
-        Move();
-        CallDie();
         Warriorattack();
-       
-
+        CallDie();
+        Move();
+        HpTest();
     }
+
 
 
     public void Move()
@@ -133,10 +132,7 @@ public class WarriorController : MonoBehaviour
                 warriorAnimator.SetBool("IsAttack", true);
                 AttackCheck = true;
 
-                if(AttackCheck == true)
-                {
-                    effactAnimator.SetBool("IsEffact", true);
-                }
+                
                
             }
         }
@@ -145,11 +141,6 @@ public class WarriorController : MonoBehaviour
             curTime -= Time.deltaTime;
             AttackCheck = false;
             warriorAnimator.SetBool("IsAttack", false);
-         
-            if(AttackCheck == false)
-            {
-                effactAnimator.SetBool("IsEffact", false);
-            }
 
         }
 
