@@ -25,7 +25,7 @@ public class HealingZone : MonoBehaviour
             else
                 WarriorController.currentMP += 1;
             
-
+      
         }
 
 
