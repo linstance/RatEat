@@ -10,8 +10,7 @@ public class Hpbar : MonoBehaviour
     private int maxHealth;
     //private int health;
     private int isCurrentHP;
-    
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +31,5 @@ public class Hpbar : MonoBehaviour
         {
             isCurrentHP = maxHealth;
         }
-
-
     }
 }

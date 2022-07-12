@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Portal : MonoBehaviour
+public class MiniMap : MonoBehaviour
 {
+    public GameObject closebox;
+    public GameObject openbox;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +17,13 @@ public class Portal : MonoBehaviour
     {
         
     }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Stage_1-1");
+            closebox.gameObject.SetActive(false);
+            openbox.gameObject.SetActive(true);
+
         }
     }
 }

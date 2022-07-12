@@ -3,10 +3,18 @@ using UnityEngine;
 
 public class HealingZone : MonoBehaviour
 {
-    private void OnTriggerStay2D(collision2D collision )
+    public Animator animator;
+
+    private void Awake()
     {
-        if(collision.CompareTag("Player"))
+        animator = GetComponent<Animator>();
+    }
+    private void OnTriggerStay2D(Collider2D collider )
+    {
+        if(collider.CompareTag("Player"))
         {
+            animator.SetTrigger("HealingZone");
+            
             if(WarriorController.currentHP == 10)
             WarriorController.currentHP += 0;
             else
@@ -17,10 +25,7 @@ public class HealingZone : MonoBehaviour
             else
                 WarriorController.currentMP += 1;
             
-            if ( WarriorController.currentHP == 10 && WarriorController.currentMP == 150)
-            {
-                anim.StopPlayBack("HealingZone");
-            }
+      
         }
 
 
