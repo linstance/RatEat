@@ -59,8 +59,8 @@ public class WarriorController : MonoBehaviour
         Move();
         CallDie();
         Warriorattack();
+       
 
-        HpTest();
     }
 
 

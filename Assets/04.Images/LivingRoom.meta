@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/04.Images/LivingRoom.meta
 guid: a8b7a0506c568564184242acafda3938
+========
+guid: 2bb82a306c9ce5c4f9fd600954572e0b
+>>>>>>>> parent of c5c4f65 (체력 회복):Assets/deleted.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
