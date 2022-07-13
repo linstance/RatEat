@@ -13,7 +13,7 @@ public class WarriorController : MonoBehaviour
     
 
     private float curTime;
-    public float coolTime = 0.5f;
+    public float coolTime = 0.5f; //공격 딜레이
 
     private float inputX; // 움직임의 수직값
     private float inputY; // 움직임의 높이값
@@ -24,7 +24,7 @@ public class WarriorController : MonoBehaviour
 
     public static int currentDamage; //전사 생쥐가 현재 받을 데미지를 저장하는 변수
 
-    private float WarriorCritical; //워리어의 치명타율을 저장하는 변수
+    
     private float WarriorSpeed; //워리어의 속도를 저장하는 변수
 
     public static int WarrorHP; //워리어의 최대체력을 저장하는 변수
@@ -32,23 +32,26 @@ public class WarriorController : MonoBehaviour
     public static int WarrorMP; //워리어의 마나를 저장하는 변수
     public static int currentMP;//현재 워리어의 마나를 저장한는 변수
 
-    public GameObject[] Weapon;
+    public GameObject[] Weapon;// 무기를 담을 배열
 
-    public Transform pos;
-    public Vector2 boxSize;
+    public Transform pos;   //히트박스 위치
+    public Vector2 boxSize; //공격범위 크기
+
+    private int CurrntAttackPoint;
 
     void Start()
     {
-        
+
+        CurrntAttackPoint = 2;
+        Debug.Log("현재 공격력:" + CurrntAttackPoint);
 
          warriorAnimator = GetComponent<Animator>();
-        PlayerStat playerStat = new PlayerStat(10,150,4f, 2.0f, "Warrior");
+        PlayerStat playerStat = new PlayerStat(10,150, 4f, "Warrior");
         WarriorSpeed = playerStat.PlayerSpeed;
         WarrorHP = playerStat.PlayerHP;
         currentHP = playerStat.PlayerHP;
         WarrorMP = playerStat.PlayerMP;
         currentMP = playerStat.PlayerMP;
-        WarriorCritical = playerStat.PlayerCritical;
         playerStat.CurrentPlayer(); //플레이어의 현재 상태를 출력하는 함수
     }
 
@@ -123,16 +126,38 @@ public class WarriorController : MonoBehaviour
                 Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
                 foreach(Collider2D collider in collider2Ds)
                 {
-                    Debug.Log(collider.tag);
+                   
+                    if(collider.tag == "Ant")
+                    {
+                        collider.GetComponent<Ant>().takeDamage(CurrntAttackPoint);
+                    }
+                    else if(collider.tag == "redAnt")
+                    {
+                        collider.GetComponent<Ant>().takeDamage(CurrntAttackPoint);
+                    }
+                    else if(collider.tag == "Fly")
+                    {
+                        collider.GetComponent<Ant>().takeDamage(CurrntAttackPoint);
+                    }
+                    else if (collider.tag == "flyHell")
+                    {
+                        collider.GetComponent<Ant>().takeDamage(CurrntAttackPoint);
+                    }
+                    else if (collider.tag == "Spider")
+                    {
+                        collider.GetComponent<Ant>().takeDamage(CurrntAttackPoint);
+                    }
+                    else if (collider.tag == "Bee")
+                    {
+                        collider.GetComponent<Ant>().takeDamage(CurrntAttackPoint);
+                    }
+
                 }
 
                 curTime = coolTime;
 
-
                 warriorAnimator.SetBool("IsAttack", true);
                 AttackCheck = true;
-
-                
                
             }
         }
@@ -183,27 +208,39 @@ public class WarriorController : MonoBehaviour
     {
         if (other.gameObject.tag == "BronzeSword" && Input.GetKey(KeyCode.F))
         {
+            //동검 Common
             Weapon[0].SetActive(true);
             
             Weapon[1].SetActive(false);
             Weapon[2].SetActive(false);
+            CurrntAttackPoint = 4;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
 
         }
 
         if (other.gameObject.tag == "needleSword" && Input.GetKey(KeyCode.F))
         {
+            //바늘검 Common
             Weapon[2].SetActive(true);
 
             Weapon[0].SetActive(false);
             Weapon[1].SetActive(false);
+            CurrntAttackPoint = 2;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
         }
 
         if (other.gameObject.tag == "IceSword" && Input.GetKey(KeyCode.F))
         {
+            //빙뢰검 Epic
             Weapon[1].SetActive(true);
 
             Weapon[0].SetActive(false);
             Weapon[2].SetActive(false);
+            CurrntAttackPoint = 8;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
         }
 
     }
