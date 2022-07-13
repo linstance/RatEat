@@ -4,8 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - bee
-  - Monstre
   - needle
   - BorderLine
   - Line
@@ -16,7 +14,12 @@ TagManager:
   - CloseGate
   - OpenGate
   - IceSword
-  - Arm
+  - Ant
+  - redAnt
+  - Spider
+  - Fly
+  - flyHell
+  - Bee
   layers:
   - Default
   - TransparentFX
