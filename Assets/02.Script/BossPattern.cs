@@ -5,58 +5,107 @@ using UnityEngine;
 
 public class BossPattern : MonoBehaviour
 {
-    public GameObject Bullet;
+    public float rot_Speed;
 
-    int count = 15;
-    private BoxCollider2D area;
-    private List<GameObject> BulletList = new List<GameObject>();
+    bool A;
+    //총알이 발사될 위치이다.
+    public Transform pos;
+
+    //발사될 총알 오브젝트이다.
+    public GameObject bullet;
+
+    public float Delaytime = 0.3f;
+    private float ShotTime;
+    int isDeal;
+    GameObject Boss;
 
     void Start()
     {
-        area = GetComponent<BoxCollider2D>();
-        StartCoroutine("Spawn", 20);
-        
+        isDeal = 0;
     }
 
-    IEnumerator Spawn(float delayTime)
+    void Update()
     {
-        for (int i = 0; i < count; i++)
+
+        ShotTime += Time.deltaTime;
+
+        //회전
+        transform.Rotate(Vector3.forward * rot_Speed * 100 * Time.deltaTime);
+
+        if (ShotTime >= Delaytime && BossHpBar.BNowHp <= BossHpBar.BMaxHp * 1.0f && !A)
         {
-            Vector3 spawnPos = GetRandomPosition();
+            ShotTime = 0;
 
-            GameObject instance = Instantiate(Bullet, spawnPos, Quaternion.identity);
-            BulletList.Add(instance);
+            Debug.Log("ddddd");
+            //총알 생성
+            GameObject temp = Instantiate(bullet);
+
+            //2초후 자동 삭제
+            Destroy(temp, 3f);
+
+            //총알 생성 위치를 머즐 입구로 한다.
+            temp.transform.position = transform.position;
+
+            //총알의 방향을 오브젝트의 방향으로 한다.
+            //->해당 오브젝트가 오브젝트가 360도 회전하고 있으므로, Rotation이 방향이 됨.
+            temp.transform.rotation = transform.rotation;
+
+
         }
-        area.enabled = false;
-        yield return new WaitForSeconds(delayTime);
 
-        for (int i = 0; i < count; i++)
-            Destroy(BulletList[i].gameObject);
-
-        BulletList.Clear();
-        area.enabled = true;
-        StartCoroutine("Spawn", 20);
-
-    }
-
-    private Vector2 GetRandomPosition()
-    {
-        Vector2 basePosition = transform.position;  //오브젝트의 위치
-        Vector2 size = area.size;                   //box colider2d, 즉 맵의 크기 벡터
-
-        //x, y축 랜덤 좌표 얻기
-        float posX = basePosition.x + Random.Range(-size.x / 2f, size.x / 2f);
-        float posY = basePosition.y + Random.Range(-size.y / 2f, size.y / 2f);
-
-        Vector2 spawnPos = new Vector2(posX, posY);
-
-        return spawnPos;
-    }
-    private void OnCollisionEnter2D(Collision2D coll)
-    {
-        if ( coll.gameObject.name == "Bullet(Clone)")
+        if (BossHpBar.BNowHp <= BossHpBar.BMaxHp * 0.5f && !A)
         {
-            Destroy(Bullet);
+
+            ShotTime = 0;
+            Delaytime = 2F;
+            A = true;
+
+        }
+        Debug.Log(A);
+        if (ShotTime >= Delaytime && A)
+        {
+
+            if (isDeal < 1)
+            {
+                ShotTime = 0;
+                shot();
+            }
+            else
+            {
+                ShotTime = 0;
+                StartCoroutine(Delay());
+            }
+
+
         }
     }
+    void shot()
+    {
+
+
+        Debug.Log("asd");
+        isDeal += 1;
+        //360번 반복
+        for (int i = 0; i < 360; i += 40)
+        {
+            //총알 생성
+            GameObject temp = Instantiate(bullet);
+
+            //1초마다 삭제
+            Destroy(temp, 1f);
+
+            //총알 생성 위치를 옵젝 좌표로 한다. 
+            temp.transform.position = transform.position;
+
+            //Z에 값이 변해야 회전이 이루어지므로, Z에 i를 대입한다.
+            temp.transform.rotation = Quaternion.Euler(0, 0, i);
+        }
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(4f);
+        isDeal = 0;
+    }
+
 }
