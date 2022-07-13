@@ -7713,7 +7713,7 @@ GameObject:
   - component: {fileID: 1413429685}
   - component: {fileID: 1413429684}
   m_Layer: 0
-  m_Name: CD
+  m_Name: CloseGate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12015,7 +12015,7 @@ GameObject:
   - component: {fileID: 1961720663}
   - component: {fileID: 1961720662}
   m_Layer: 0
-  m_Name: OD
+  m_Name: OpenGate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
