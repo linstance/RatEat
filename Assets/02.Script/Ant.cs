@@ -4,92 +4,61 @@ using UnityEngine;
 
 public class Ant : MonoBehaviour
 {
-    private GameObject player;
-    public float movespeed = 5f;
-    private Rigidbody2D rb;
-    private Vector2 movement;// Start is called before the first frame update
-    public static int antHP = 6;
 
+    private GameObject target;  //타겟
 
-    Animator animator;
-    void Start()
+    public int AntHp = 10; //개미 체력ㄴ
+    public float speed; //이동속도
+    public float minimumDistance;   //추적 범위
+
+    public Animator AntAnimator;
+
+    private void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>();
-        player = GameObject.FindWithTag("Player");
-
-        animator = gameObject.GetComponent<Animator>();
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
- 
-            Debug.Log("충돌 유지");
-            animator.SetBool("IsAntHit", true);
-        }
+        target = GameObject.FindWithTag("Player");
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-
-            Debug.Log("충돌 끝남");
-            animator.SetBool("IsAntHit", false);
-        }
-
-        if(collision.gameObject.tag == "BronzeSword")
-        {
-            antHP -= 2;
-        }
-
-    }
-
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
 
-        if(antHP == 0)
+        if(AntHp == 0)
         {
             gameObject.SetActive(false);
         }
 
-
-
-        /* Vector3 direction = player.position - transform.position;
-        //float angle2 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-       // rb.rotation = angle2;
-        direction.Normalize();
-        movement = direction;
-
-        //추가
-        Vector3 dir = target.transform.position - transform.position;
-
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.up); */
-
-
-        Vector3 direction = player.transform.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        
-        rb.rotation = angle;
-        direction.Normalize();
-        movement = direction;
-
-        
-
-
+        MoveAttack();
+        Direction();
     }
-    private void FixedUpdate()
+
+
+    void MoveAttack()
     {
-        moveChracter(movement);
+        if (Vector2.Distance(transform.position, target.transform.position) > minimumDistance)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+            AntAnimator.SetBool("IsAntAttack", false);
+        }
+        else
+        {
+            AntAnimator.SetBool("IsAntAttack", true);
+        }
     }
-    void moveChracter(Vector2 direction)
+
+    void Direction()
     {
-        rb.MovePosition((Vector2)transform.position + (direction * movespeed * Time.deltaTime));
+        if (target.transform.position.x > transform.position.x)
+        {
+            transform.localEulerAngles = new Vector3(0, 180, 0);
+        }
+        else if (target.transform.position.x < transform.position.x)
+        {
+            transform.localEulerAngles = new Vector3(0, 0, 0);
+        }
     }
 
- 
-
+    public void takeDamage(int Damage)
+    {
+       AntHp =  AntHp - Damage;
     }
+    
+}
