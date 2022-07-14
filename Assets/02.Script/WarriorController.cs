@@ -252,13 +252,7 @@ public class WarriorController : MonoBehaviour
 
     public void OnDieEvent()
     {
-        /*
-        if (currentHP <= 0)
-        {
-            Destroy(GameManager);
-            SceneManager.LoadScene("Game Over");
-        }
-       */
+      
     }
 
     public void PlayerTakeDamage(int Damage)

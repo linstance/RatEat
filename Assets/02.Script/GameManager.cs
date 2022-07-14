@@ -22,11 +22,8 @@ public class GameManager : MonoBehaviour
     {
         if(WarriorController.currentHP <= 0)
         {
-            Destroy(Player);
-            Destroy(MainCamera);
-            Destroy(HPbar);
-            SceneManager.LoadScene("Game Over");
-            Invoke("Dest", 0f);
+            Invoke("DestroyGM", 0.7f);
+            Invoke("Ds", 0.71f);
         }
     }
 
@@ -38,8 +35,16 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(HPbar);
     }
 
-    private void Dest()
+    private void DestroyGM()
     {
+        Destroy(HPbar);
+        SceneManager.LoadScene("Game Over");
+    }
+
+    private void Ds()
+    {
+        Destroy(Player);
+        Destroy(MainCamera);
         Destroy(gameObject);
     }
 
