@@ -10,8 +10,6 @@ public class WarriorController : MonoBehaviour
 
     //전사생쥐에 움직임 및 전사생쥐의 기본적인 동작에 관련된 스크립트
 {
-    [SerializeField]
-    private string nextSceneName;
     
 
     private float curTime;
@@ -20,10 +18,9 @@ public class WarriorController : MonoBehaviour
     private float inputX; // 움직임의 수직값
     private float inputY; // 움직임의 높이값
 
-    private bool AttackCheck = false; //현재 공격을 하고 있는지 체크 하는 변수
+    public GameObject GameManager;
 
     public Animator warriorAnimator; //워리어 애니메이터
-
     public static int currentDamage; //전사 생쥐가 현재 받을 데미지를 저장하는 변수
 
     
@@ -57,6 +54,8 @@ public class WarriorController : MonoBehaviour
         WarrorMP = playerStat.PlayerMP;
         currentMP = playerStat.PlayerMP;
         playerStat.CurrentPlayer(); //플레이어의 현재 상태를 출력하는 함수
+
+        GameManager = GameObject.FindGameObjectWithTag("GameManager");
     }
 
     private void Awake()
@@ -138,27 +137,28 @@ public class WarriorController : MonoBehaviour
                    
                     if(collider.tag == "Ant")
                     {
-                        collider.GetComponent<Ant>().takeDamage(CurrntAttackPoint);
+                        collider.GetComponent<Ant>().takeAntDamage(CurrntAttackPoint);
                     }
-                    else if(collider.tag == "redAnt")
+
+                     if(collider.tag == "redAnt")
                     {
-                        collider.GetComponent<Ant>().takeDamage(CurrntAttackPoint);
+                        collider.GetComponent<redAnt>().takeRedAntDamage(CurrntAttackPoint);
                     }
                     else if(collider.tag == "Fly")
                     {
-                        collider.GetComponent<Ant>().takeDamage(CurrntAttackPoint);
+                        collider.GetComponent<Ant>().takeAntDamage(CurrntAttackPoint);
                     }
                     else if (collider.tag == "flyHell")
                     {
-                        collider.GetComponent<Ant>().takeDamage(CurrntAttackPoint);
+                        collider.GetComponent<Ant>().takeAntDamage(CurrntAttackPoint);
                     }
                     else if (collider.tag == "Spider")
                     {
-                        collider.GetComponent<Ant>().takeDamage(CurrntAttackPoint);
+                        collider.GetComponent<Ant>().takeAntDamage(CurrntAttackPoint);
                     }
                     else if (collider.tag == "Bee")
                     {
-                        collider.GetComponent<Ant>().takeDamage(CurrntAttackPoint);
+                        collider.GetComponent<Ant>().takeAntDamage(CurrntAttackPoint);
                     }
 
                 }
@@ -166,14 +166,12 @@ public class WarriorController : MonoBehaviour
                 curTime = coolTime;
 
                 warriorAnimator.SetBool("IsAttack", true);
-                AttackCheck = true;
                
             }
         }
        else
         {
             curTime -= Time.deltaTime;
-            AttackCheck = false;
             warriorAnimator.SetBool("IsAttack", false);
 
         }
@@ -196,7 +194,7 @@ public class WarriorController : MonoBehaviour
         if (currentHP <= 0)
         {
             Debug.Log(currentHP);
-            warriorAnimator.SetBool("IsDie", true); 
+            warriorAnimator.SetTrigger("IsDie"); 
         }
     }
 
@@ -254,7 +252,13 @@ public class WarriorController : MonoBehaviour
 
     public void OnDieEvent()
     {
-        SceneManager.LoadScene(nextSceneName);
+        /*
+        if (currentHP <= 0)
+        {
+            Destroy(GameManager);
+            SceneManager.LoadScene("Game Over");
+        }
+       */
     }
 
     public void PlayerTakeDamage(int Damage)

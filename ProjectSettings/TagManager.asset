@@ -20,6 +20,7 @@ TagManager:
   - Fly
   - flyHell
   - Bee
+  - GameManager
   layers:
   - Default
   - TransparentFX

@@ -13088,6 +13088,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ant
       objectReference: {fileID: 0}
+    - target: {fileID: 3635334829579568394, guid: 83d0bf9f79435e7468b2274773a5517c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83d0bf9f79435e7468b2274773a5517c, type: 3}
 --- !u!1 &1991133532
@@ -15900,16 +15905,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3558498991395884769, guid: 6c97045f874920b449686841f5f0e1a5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.452
+      objectReference: {fileID: 0}
     - target: {fileID: 3558498992572323573, guid: 6c97045f874920b449686841f5f0e1a5,
         type: 3}
       propertyPath: m_Name
       value: Red Ant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558498992572323573, guid: 6c97045f874920b449686841f5f0e1a5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558498992572323573, guid: 6c97045f874920b449686841f5f0e1a5,
+        type: 3}
+      propertyPath: m_TagString
+      value: redAnt
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558498992572323576, guid: 6c97045f874920b449686841f5f0e1a5,
+        type: 3}
+      propertyPath: boxSize.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558498992572323576, guid: 6c97045f874920b449686841f5f0e1a5,
+        type: 3}
+      propertyPath: RedAntspeed
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3558498992572323576, guid: 6c97045f874920b449686841f5f0e1a5,
         type: 3}
       propertyPath: RedAntAnimator
       value: 
       objectReference: {fileID: 3558498992586973908}
+    - target: {fileID: 3558498992572323576, guid: 6c97045f874920b449686841f5f0e1a5,
+        type: 3}
+      propertyPath: RedAntminimumDistance
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3558498992572323577, guid: 6c97045f874920b449686841f5f0e1a5,
         type: 3}
       propertyPath: m_RootOrder
@@ -15918,12 +15953,12 @@ PrefabInstance:
     - target: {fileID: 3558498992572323577, guid: 6c97045f874920b449686841f5f0e1a5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 3558498992572323577, guid: 6c97045f874920b449686841f5f0e1a5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.56
+      value: 22.7
       objectReference: {fileID: 0}
     - target: {fileID: 3558498992572323577, guid: 6c97045f874920b449686841f5f0e1a5,
         type: 3}

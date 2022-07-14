@@ -29,8 +29,9 @@ public class Ant : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(AntHp);
 
-        if(AntHp == 0)
+        if(AntHp <= 0)
         {
             AntAnimator.SetTrigger("IsAntDie");
             Invoke("AntDie", 1f);
@@ -89,7 +90,7 @@ public class Ant : MonoBehaviour
         }
     }
 
-    public void takeDamage(int Damage)
+    public void takeAntDamage(int Damage)
     {
        AntHp =  AntHp - Damage;
     }

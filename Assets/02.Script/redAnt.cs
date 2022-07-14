@@ -7,9 +7,9 @@ public class redAnt : MonoBehaviour
     private GameObject target;  //타겟
 
     public int AttackPoint = 2;
-    public int AntHp = 10; //개미 체력
-    public float speed; //이동속도
-    public float minimumDistance;   //추적 범위
+    public int RedAntHp = 10; //개미 체력
+    public float RedAntspeed; //이동속도
+    public float RedAntminimumDistance;   //추적 범위
     public Animator RedAntAnimator;    //애니메이터
 
 
@@ -29,7 +29,7 @@ public class redAnt : MonoBehaviour
     private void Update()
     {
 
-        if (AntHp == 0)
+        if (RedAntHp <= 0)
         {
             RedAntAnimator.SetTrigger("IsAntDie");
             Invoke("redAntDie", 1f);
@@ -38,7 +38,7 @@ public class redAnt : MonoBehaviour
 
         if (IsLife == true)
         {
-            MoveAttack();
+            RedAntMoveAttack();
             Direction();
         }
 
@@ -46,11 +46,11 @@ public class redAnt : MonoBehaviour
 
 
 
-    void MoveAttack()
+    void RedAntMoveAttack()
     {
-        if (Vector2.Distance(transform.position, target.transform.position) > minimumDistance)
+        if (Vector2.Distance(transform.position, target.transform.position) > RedAntminimumDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, RedAntspeed * Time.deltaTime);
             RedAntAnimator.SetBool("IsAntAttack", false);
         }
         else
@@ -88,9 +88,9 @@ public class redAnt : MonoBehaviour
         }
     }
 
-    public void takeDamage(int Damage)
+    public void takeRedAntDamage(int Damage)
     {
-        AntHp = AntHp - Damage;
+        RedAntHp = RedAntHp - Damage;
     }
 
     private void OnDrawGizmos()
