@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ant : MonoBehaviour
+public class redAnt : MonoBehaviour
 {
-
     private GameObject target;  //타겟
 
     public int AttackPoint = 2;
     public int AntHp = 10; //개미 체력
     public float speed; //이동속도
     public float minimumDistance;   //추적 범위
-    public Animator AntAnimator;    //애니메이터
+    public Animator RedAntAnimator;    //애니메이터
 
 
     public Transform pos;   //히트박스 위치
@@ -30,19 +29,19 @@ public class Ant : MonoBehaviour
     private void Update()
     {
 
-        if(AntHp == 0)
+        if (AntHp == 0)
         {
-            AntAnimator.SetTrigger("IsAntDie");
-            Invoke("AntDie", 1f);
+            RedAntAnimator.SetTrigger("IsAntDie");
+            Invoke("redAntDie", 1f);
             IsLife = false;
         }
 
-        if(IsLife == true)
+        if (IsLife == true)
         {
             MoveAttack();
             Direction();
         }
-        
+
     }
 
 
@@ -52,18 +51,18 @@ public class Ant : MonoBehaviour
         if (Vector2.Distance(transform.position, target.transform.position) > minimumDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-            AntAnimator.SetBool("IsAntAttack", false);
+            RedAntAnimator.SetBool("IsAntAttack", false);
         }
         else
         {
-            AntAnimator.SetBool("IsAntAttack", true);
+            RedAntAnimator.SetBool("IsAntAttack", true);
             Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
             foreach (Collider2D collider in collider2Ds)
             {
                 if (collider.tag == "Player")
                 {
-                   
-                    if(curTime <= 0)
+
+                    if (curTime <= 0)
                     {
                         WarriorController.currentHP = WarriorController.currentHP - AttackPoint;
                         curTime = coolTime;
@@ -91,7 +90,7 @@ public class Ant : MonoBehaviour
 
     public void takeDamage(int Damage)
     {
-       AntHp =  AntHp - Damage;
+        AntHp = AntHp - Damage;
     }
 
     private void OnDrawGizmos()
@@ -100,9 +99,8 @@ public class Ant : MonoBehaviour
         Gizmos.DrawWireCube(pos.position, boxSize);
     }
 
-    private void AntDie()
+    private void redAntDie()
     {
         gameObject.SetActive(false);
     }
-
 }
