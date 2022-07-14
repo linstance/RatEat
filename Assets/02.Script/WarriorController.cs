@@ -10,8 +10,6 @@ public class WarriorController : MonoBehaviour
 
     //전사생쥐에 움직임 및 전사생쥐의 기본적인 동작에 관련된 스크립트
 {
-
-  
     [SerializeField]
     private string nextSceneName;
     
@@ -41,11 +39,13 @@ public class WarriorController : MonoBehaviour
     public Transform pos;   //히트박스 위치
     public Vector2 boxSize; //공격범위 크기
 
-    private int CurrntAttackPoint;
+    private int CurrntAttackPoint;//현재 공격력
+
+    public AudioClip AttackBgm;
+    public AudioSource PlayerAdo;
 
     void Start()
     {
-
         CurrntAttackPoint = 2;
         Debug.Log("현재 공격력:" + CurrntAttackPoint);
 
@@ -59,7 +59,11 @@ public class WarriorController : MonoBehaviour
         playerStat.CurrentPlayer(); //플레이어의 현재 상태를 출력하는 함수
     }
 
-    
+    private void Awake()
+    {
+        PlayerAdo = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         Warriorattack();
@@ -127,6 +131,7 @@ public class WarriorController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftControl))
             {
+                PlayerAdo.PlayOneShot(AttackBgm);
                 Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
                 foreach(Collider2D collider in collider2Ds)
                 {
@@ -198,15 +203,6 @@ public class WarriorController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         
-        if(other.gameObject.tag == "needle")
-        {
-           currentHP -= 1;
-        }
-        if(other.gameObject.tag == "bee")
-        {
-            currentHP -= 1;
-        }
-
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -260,5 +256,11 @@ public class WarriorController : MonoBehaviour
     {
         SceneManager.LoadScene(nextSceneName);
     }
-    
+
+    public void PlayerTakeDamage(int Damage)
+    {
+        currentHP = currentHP - Damage;
+        warriorAnimator.SetBool("IsHit", true);
+    }
+
 }
