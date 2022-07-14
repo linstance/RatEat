@@ -10,6 +10,10 @@ public class WarriorController : MonoBehaviour
 
     //전사생쥐에 움직임 및 전사생쥐의 기본적인 동작에 관련된 스크립트
 {
+
+  
+    [SerializeField]
+    private string nextSceneName;
     
 
     private float curTime;
@@ -176,7 +180,7 @@ public class WarriorController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            currentHP -= 1;
+            currentHP -= 100;
             Debug.Log("체력감소");
         }
     }
@@ -186,7 +190,8 @@ public class WarriorController : MonoBehaviour
     {
         if (currentHP <= 0)
         {
-            warriorAnimator.SetBool("isDie", true); 
+            Debug.Log(currentHP);
+            warriorAnimator.SetBool("IsDie", true); 
         }
     }
 
@@ -251,5 +256,9 @@ public class WarriorController : MonoBehaviour
         Gizmos.DrawWireCube(pos.position, boxSize);
     }
 
+    public void OnDieEvent()
+    {
+        SceneManager.LoadScene(nextSceneName);
+    }
     
 }

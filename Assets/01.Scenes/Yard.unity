@@ -11844,5 +11844,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Warrior
       objectReference: {fileID: 0}
+    - target: {fileID: 718255768264891638, guid: 6881d49d702058c418151a990875c7f1,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.57108706
+      objectReference: {fileID: 0}
+    - target: {fileID: 718255768264891638, guid: 6881d49d702058c418151a990875c7f1,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.3433933
+      objectReference: {fileID: 0}
+    - target: {fileID: 718255768264891638, guid: 6881d49d702058c418151a990875c7f1,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.060895443
+      objectReference: {fileID: 0}
+    - target: {fileID: 718255768264891638, guid: 6881d49d702058c418151a990875c7f1,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.18533255
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6881d49d702058c418151a990875c7f1, type: 3}
