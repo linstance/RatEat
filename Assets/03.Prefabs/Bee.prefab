@@ -40,18 +40,17 @@ GameObject:
   m_Component:
   - component: {fileID: 9013417355518824458}
   - component: {fileID: 9013417355518824457}
-  - component: {fileID: 9013417355518824470}
   - component: {fileID: 9013417355518824469}
   - component: {fileID: 9013417355518824468}
   - component: {fileID: 9013417355518824459}
-  - component: {fileID: 9013417355518824471}
+  - component: {fileID: 586650391}
   m_Layer: 0
   m_Name: Bee
-  m_TagString: bee
+  m_TagString: Bee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9013417355518824458
 Transform:
   m_ObjectHideFlags: 0
@@ -61,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 9013417355518824456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.46, y: 1.72, z: 0}
-  m_LocalScale: {x: 2.2, y: 2.2, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 9013417354937149300}
   m_Father: {fileID: 0}
@@ -103,9 +102,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1277002787
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 585a2261e7856094ab4c42f762086cfd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -117,20 +116,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9013417355518824470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9013417355518824456}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a62f3cdb8079f4d4f91b61c7db1ad4de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  movespeed: 1
 --- !u!50 &9013417355518824469
 Rigidbody2D:
   serializedVersion: 4
@@ -151,7 +136,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &9013417355518824468
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -197,7 +182,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9013417355518824471
+--- !u!114 &586650391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,15 +191,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 9013417355518824456}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 189d92961be3be743b30acef30546c1b, type: 3}
+  m_Script: {fileID: 11500000, guid: 00d7cde25c93c6e408d03f49c17cf9e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 15
-  isLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  speed: 2
-  atkDistance: 10
-  sting2: {fileID: 4295231177701109977, guid: df6ba6eefc52138468cee71ad89ef9b2, type: 3}
-  pos: {fileID: 9013417354937149300}
-  cooltime: 5
+  needle: {fileID: 4387005195874159725, guid: 16bfaaecb1a85b04ca146d35020aacfc, type: 3}
+  coolTime: 2
+  BeeSpeed: 3
+  BeeminimumDistance: 2
+  BeeAnimator: {fileID: 9013417355518824459}

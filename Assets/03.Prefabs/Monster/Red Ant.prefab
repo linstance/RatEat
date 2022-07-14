@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3558498991395884770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.55, y: 0, z: 0}
+  m_LocalPosition: {x: -0.452, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3558498992572323577}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 3558498992572323583}
   m_Layer: 0
   m_Name: Red Ant
-  m_TagString: Untagged
+  m_TagString: redAnt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,12 +176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackPoint: 3
-  AntHp: 10
-  speed: 1.5
-  minimumDistance: 1.5
-  RedAntAnimator: {fileID: 0}
+  RedAntHp: 10
+  RedAntspeed: 1.5
+  RedAntminimumDistance: 1.5
+  RedAntAnimator: {fileID: 3558498992572323583}
   pos: {fileID: 3558498991395884769}
-  boxSize: {x: 1, y: 1}
+  boxSize: {x: 0.5, y: 1}
   coolTime: 1
 --- !u!95 &3558498992572323583
 Animator:

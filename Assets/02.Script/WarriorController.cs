@@ -200,7 +200,10 @@ public class WarriorController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if(other.tag == "needle")
+        {
+            currentHP = currentHP - 1;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
