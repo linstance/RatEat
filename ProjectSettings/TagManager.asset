@@ -21,6 +21,7 @@ TagManager:
   - flyHell
   - Bee
   - GameManager
+  - Banana
   layers:
   - Default
   - TransparentFX
