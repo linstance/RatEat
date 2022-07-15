@@ -160,7 +160,10 @@ public class WarriorController : MonoBehaviour
                     {
                         collider.GetComponent<Bee>().takeBeeDamage(CurrntAttackPoint);
                     }
-
+                    else if(collider.tag == "Dog")
+                    {
+                        collider.GetComponent<Dog>().DogTakeDamage(CurrntAttackPoint);
+                    }
                 }
 
                 curTime = coolTime;
