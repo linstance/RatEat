@@ -2470,9 +2470,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 691617701
+  m_SortingLayer: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 1d88bb4b9f5ce9844a310bc648912703, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7755,7 +7755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308c48355712e2441b2fbbd95c4fe205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2074098741}
   speed: 10
 --- !u!1 &979049756
 GameObject:
@@ -10689,6 +10688,12 @@ PolygonCollider2D:
       - {x: 0.3356561, y: -1.1411115}
       - {x: 0.48828128, y: -0.98848635}
       - {x: 0.48828128, y: 0.73570096}
+--- !u!1 &1747678468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2754110692529340698, guid: 6881d49d702058c418151a990875c7f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 718255767621066949}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1854862878
 GameObject:
   m_ObjectHideFlags: 0
@@ -11153,9 +11158,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 691617701
+  m_SortingLayer: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 7acd2eb23e96af74e9ac3abfcc785c72, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11858,12 +11863,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &2074098741 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 718255768264891632, guid: 6881d49d702058c418151a990875c7f1,
-    type: 3}
-  m_PrefabInstance: {fileID: 718255767621066949}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &718255767621066949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11991,6 +11990,16 @@ PrefabInstance:
       propertyPath: PlayerAdo
       value: 
       objectReference: {fileID: 2074098737}
+    - target: {fileID: 718255768264891635, guid: 6881d49d702058c418151a990875c7f1,
+        type: 3}
+      propertyPath: Weapon.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 718255768264891635, guid: 6881d49d702058c418151a990875c7f1,
+        type: 3}
+      propertyPath: Weapon.Array.data[3]
+      value: 
+      objectReference: {fileID: 1747678468}
     - target: {fileID: 718255768264891637, guid: 6881d49d702058c418151a990875c7f1,
         type: 3}
       propertyPath: m_Name
@@ -12015,6 +12024,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.y
       value: -0.18533255
+      objectReference: {fileID: 0}
+    - target: {fileID: 2754110692529340698, guid: 6881d49d702058c418151a990875c7f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6881d49d702058c418151a990875c7f1, type: 3}

@@ -255,6 +255,204 @@ public class WarriorController : MonoBehaviour
 
             Debug.Log("현재공격력 :" + CurrntAttackPoint);
         }
+        
+        if (other.gameObject.tag == "Banana" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[3].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+
+        if (other.gameObject.tag == "Bet" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[4].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+
+        if (other.gameObject.tag == "Candy" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[5].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+
+        if (other.gameObject.tag == "Cane" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[6].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+
+        if (other.gameObject.tag == "Carrot" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[7].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+
+        if (other.gameObject.tag == "Dumbbell" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[8].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+
+        if (other.gameObject.tag == "Earpick" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[9].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+
+        if (other.gameObject.tag == "Flower" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[10].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+
+        if (other.gameObject.tag == "Grass" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[11].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+
+        if (other.gameObject.tag == "Hammer" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[12].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+
+        if (other.gameObject.tag == "Icecream" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[13].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+
+        if (other.gameObject.tag == "Legend" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[14].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+
+        if (other.gameObject.tag == "Pan" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[15].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+
+        if (other.gameObject.tag == "Pencil" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[16].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+
+        if (other.gameObject.tag == "Pepero" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[17].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+
+        if (other.gameObject.tag == "Plunger" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[18].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+        
+        if (other.gameObject.tag == "Shovel" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[19].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+
+        if (other.gameObject.tag == "Umbrella" && Input.GetKey(KeyCode.F))
+        {
+            //바나나 Common
+            AllWeaponDeactive();
+            Weapon[20].SetActive(true);
+            CurrntAttackPoint = 3;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
 
     }
 
