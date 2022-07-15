@@ -21,6 +21,7 @@ TagManager:
   - flyHell
   - Bee
   - GameManager
+  - Dog
   layers:
   - Default
   - TransparentFX

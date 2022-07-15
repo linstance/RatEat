@@ -11,21 +11,27 @@ public class BossHpBar : MonoBehaviour
 {
     Image BHP;
     public TextMeshProUGUI BHPText;
-    public static float BMaxHp;
-    public static float BNowHp; 
+
+    private int DogmaxHealth;
+    private int isDogCurrentHP;
     // Start is called before the first frame update
     void Start()
     {
-        BMaxHp = 100;
-        BNowHp = BMaxHp;
+        DogmaxHealth += Dog.CurDogHp;
         BHP = GetComponent<Image>();
+        isDogCurrentHP = DogmaxHealth;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        BHP.fillAmount = BNowHp / 100f;
-        BHPText.text = BNowHp.ToString() + "/" + BMaxHp.ToString();
-        
+        isDogCurrentHP = Dog.CurDogHp;
+        BHP.fillAmount = isDogCurrentHP / 50f;
+        BHPText.text = isDogCurrentHP.ToString() + "/" + DogmaxHealth.ToString();
+        if (isDogCurrentHP > DogmaxHealth)
+        {
+            isDogCurrentHP = DogmaxHealth;
+        }
     }
 }
