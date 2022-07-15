@@ -8,11 +8,11 @@ public class Ant : MonoBehaviour
     private GameObject target;  //타겟
 
     public int AttackPoint = 2;
-    public int AntHp = 10; //개미 체력
-    public float speed; //이동속도
-    public float minimumDistance;   //추적 범위
-    public Animator AntAnimator;    //애니메이터
-
+    public int AntHp = 8; //개미 체력
+    public float speed = 1.5f; //이동속도
+    public float minimumDistance = 1.5f; //추적 범위
+    public Animator AntAnimator; //애니메이터
+    
 
     public Transform pos;   //히트박스 위치
     public Vector2 boxSize; //공격범위 크기
