@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bee : MonoBehaviour
 {
+    public int BeeHp = 6;
 
     public GameObject needle;
 
@@ -15,6 +16,8 @@ public class Bee : MonoBehaviour
     public Animator BeeAnimator;
 
     private GameObject target;  //타겟
+    private bool IsLife = true; //벌 생존 여부
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +27,19 @@ public class Bee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (BeeHp <= 0)
+        {
+            BeeAnimator.SetTrigger("IsBeeDie");
+            Invoke("BeeDie", 1f);
+            IsLife = false;
+        }
 
-        BeeAttack();
-        Direction();
+        if(IsLife == true)
+        {
+            BeeAttack();
+            Direction();
+        }
+       
 
     }
 
@@ -65,5 +78,16 @@ public class Bee : MonoBehaviour
             BeeAnimator.SetBool("IsBeeAttack", false);
         }
 
+    }
+
+    private void BeeDie()
+    {
+        gameObject.SetActive(false);
+    }
+
+
+    public void takeBeeDamage(int Damage)
+    {
+        BeeHp = BeeHp - Damage;
     }
 }

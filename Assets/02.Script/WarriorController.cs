@@ -43,7 +43,7 @@ public class WarriorController : MonoBehaviour
 
     void Start()
     {
-        CurrntAttackPoint = 2;
+        CurrntAttackPoint = 999;
         Debug.Log("현재 공격력:" + CurrntAttackPoint);
 
          warriorAnimator = GetComponent<Animator>();
@@ -158,7 +158,7 @@ public class WarriorController : MonoBehaviour
                     }
                     else if (collider.tag == "Bee")
                     {
-                        collider.GetComponent<Ant>().takeAntDamage(CurrntAttackPoint);
+                        collider.GetComponent<Bee>().takeBeeDamage(CurrntAttackPoint);
                     }
                     else if(collider.tag == "Dog")
                     {
@@ -209,15 +209,23 @@ public class WarriorController : MonoBehaviour
         }
     }
 
+
+    void AllWeaponDeactive()    //무기 자동 비활성화
+    {
+        foreach (GameObject wea in Weapon)
+        {
+            wea.SetActive(false);
+        }
+    }
+
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "BronzeSword" && Input.GetKey(KeyCode.F))
         {
             //동검 Common
+            AllWeaponDeactive();
             Weapon[0].SetActive(true);
-            
-            Weapon[1].SetActive(false);
-            Weapon[2].SetActive(false);
             CurrntAttackPoint = 4;
 
             Debug.Log("현재공격력 :" + CurrntAttackPoint);
@@ -227,22 +235,25 @@ public class WarriorController : MonoBehaviour
         if (other.gameObject.tag == "needleSword" && Input.GetKey(KeyCode.F))
         {
             //바늘검 Common
+            
+            AllWeaponDeactive();
             Weapon[2].SetActive(true);
-
-            Weapon[0].SetActive(false);
-            Weapon[1].SetActive(false);
             CurrntAttackPoint = 2;
 
             Debug.Log("현재공격력 :" + CurrntAttackPoint);
         }
 
+    
+    
+    
+
         if (other.gameObject.tag == "IceSword" && Input.GetKey(KeyCode.F))
         {
             //빙뢰검 Epic
-            Weapon[1].SetActive(true);
+            
 
-            Weapon[0].SetActive(false);
-            Weapon[2].SetActive(false);
+            AllWeaponDeactive();
+            Weapon[1].SetActive(true);
             CurrntAttackPoint = 8;
 
             Debug.Log("현재공격력 :" + CurrntAttackPoint);
@@ -256,10 +267,6 @@ public class WarriorController : MonoBehaviour
         Gizmos.DrawWireCube(pos.position, boxSize);
     }
 
-    public void OnDieEvent()
-    {
-      
-    }
 
     public void PlayerTakeDamage(int Damage)
     {
