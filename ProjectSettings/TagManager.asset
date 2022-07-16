@@ -85,3 +85,6 @@ TagManager:
   - name: item
     uniqueID: 691617701
     locked: 0
+  - name: minimap
+    uniqueID: 2178230881
+    locked: 0
