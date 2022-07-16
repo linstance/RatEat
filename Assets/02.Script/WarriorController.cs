@@ -24,7 +24,7 @@ public class WarriorController : MonoBehaviour
     public static int currentDamage; //전사 생쥐가 현재 받을 데미지를 저장하는 변수
 
     
-    private float WarriorSpeed; //워리어의 속도를 저장하는 변수
+    public float WarriorSpeed; //워리어의 속도를 저장하는 변수
 
     public static int WarrorHP; //워리어의 최대체력을 저장하는 변수
     public static int currentHP; //현재 워리어의 체력을 저장한는 변수
