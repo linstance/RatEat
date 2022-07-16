@@ -3,49 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
-
-
 public class Dog : MonoBehaviour
 {
    
-    public static int DogHp = 50;
-    public static int CurDogHp = 50;
+    public static int DogHp = 50; //강아지 보스의 최대 체력을 정의한는 변수
+    public static int CurDogHp = 50; //강아지 보스의 현재 체력을 정의한는 변수
 
-    private GameObject target;
-    private Rigidbody2D rb;
-    private Vector2 movement;
-    public float rot_Speed;
-    public GameObject bullet;
-    private float EndTime = 2f;
-    private float StartTime;
-    public Animatior animatior;
-    
+    private GameObject target;  //타겟
 
+    private bool isLife; //생존 여부
 
+    public float rot_Speed; //회전속도
+    public GameObject bullet;   //총알 오브젝트
 
+    private float EndTime = 2f; //딜레이
+    private float StartTime; 
 
+    public Animator Doganimator;    //애니메이터
 
     void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>();
+        isLife = true;
         target = GameObject.FindGameObjectWithTag("Player");
-        Doganimatior = GetComponent<Animatior>();
+        Doganimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        StartTime += Time.deltaTime;
-
-        if ( StartTime >= EndTime )
+      
+        if(CurDogHp <= 0)
         {
-            shot();
-            StartTime = 0;
+            Debug.Log("엄준식");
+            Doganimator.SetTrigger("Is_Die");
+            Invoke("DogDie", 1f);
+            isLife = false;
         }
-        Direction();
-        Dam();
-        DogDie();
+
+       if(isLife == true)
+        {
+            StartTime += Time.deltaTime;
+            if (StartTime >= EndTime)
+            {
+                shot();
+                StartTime = 0;
+            }
+
+            Direction();
+            Dam();
+            
+        }
      
     }
 
@@ -98,10 +105,6 @@ public class Dog : MonoBehaviour
 
     public void DogDie()
     {
-        if (curDogHp <= 0)
-
-            DogAnimationController.SetTrigger("Is_Die");
-
-
+        gameObject.SetActive(false);
     }
 }
