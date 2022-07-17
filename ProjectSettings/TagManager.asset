@@ -39,6 +39,10 @@ TagManager:
   - Plunger
   - Shovel
   - Umbrella
+  - Skill1
+  - Skill2
+  - Skill3
+  - MoonNightSword
   layers:
   - Default
   - TransparentFX
