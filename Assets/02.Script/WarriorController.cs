@@ -540,9 +540,17 @@ public class WarriorController : MonoBehaviour
 
     void Skill_03()
     {
-        GameObject temp = Instantiate(PlayerBullet);
+        currentMP -= 40;
 
-        temp.transform.position = pos.position;
+        for (int i = 0; i < 360; i += 90)
+        {
+            GameObject temp = Instantiate(PlayerBullet);
+
+            temp.transform.position = pos.position;
+
+            temp.transform.rotation = Quaternion.Euler(0, 0, i);
+        }
+           
        
 
     }
