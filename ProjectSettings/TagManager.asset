@@ -43,6 +43,7 @@ TagManager:
   - Skill2
   - Skill3
   - MoonNightSword
+  - Dumi
   layers:
   - Default
   - TransparentFX
