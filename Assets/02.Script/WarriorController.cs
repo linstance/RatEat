@@ -18,7 +18,6 @@ public class WarriorController : MonoBehaviour
     private float inputX; // 움직임의 수직값
     private float inputY; // 움직임의 높이값
 
-    public GameObject GameManager;
 
     public Animator warriorAnimator; //워리어 애니메이터
     public static int currentDamage; //전사 생쥐가 현재 받을 데미지를 저장하는 변수
@@ -55,7 +54,6 @@ public class WarriorController : MonoBehaviour
         currentMP = playerStat.PlayerMP;
         playerStat.CurrentPlayer(); //플레이어의 현재 상태를 출력하는 함수
 
-        GameManager = GameObject.FindGameObjectWithTag("GameManager");
     }
 
     private void Awake()
