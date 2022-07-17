@@ -518,9 +518,10 @@ public class WarriorController : MonoBehaviour
 
     void Skill_01()
     {
+        currentMP -= 10;
         if ( currentHP < 10 )
         {
-            WarriorController.currentHP += 3;
+            WarriorController.currentHP += 1;
         }
         if ( currentHP >= 10 )
         {
@@ -532,7 +533,9 @@ public class WarriorController : MonoBehaviour
 
     void Skill_02()
     {
+        currentMP -= 50;
         
+        StartCoroutine(NoHit());   
     }
 
     void Skill_03()
@@ -557,5 +560,15 @@ public class WarriorController : MonoBehaviour
         currentHP = currentHP - Damage;
         warriorAnimator.SetBool("IsHit", true);
     }
+
+    IEnumerator NoHit()
+    {
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().color = Color.yellow;
+        yield return new WaitForSeconds(3.0f);
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
 
 }
