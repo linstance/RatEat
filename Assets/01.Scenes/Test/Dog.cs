@@ -16,10 +16,10 @@ public class Dog : MonoBehaviour
     public float rot_Speed; //회전속도
     public GameObject bullet;   //총알 오브젝트
 
-    private float EndTime = 2f; //딜레이
+    private float EndTime = 4f; //딜레이
     private float StartTime; 
 
-    public Animator Doganimator;    //애니메이터
+    private Animator Doganimator;    //애니메이터
 
     void Start()
     {
@@ -45,6 +45,7 @@ public class Dog : MonoBehaviour
             StartTime += Time.deltaTime;
             if (StartTime >= EndTime)
             {
+                Doganimator.SetTrigger("IsBark");
                 shot();
                 StartTime = 0;
             }

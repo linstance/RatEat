@@ -6,25 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class WarriorController : MonoBehaviour
 
-    
-
     //전사생쥐에 움직임 및 전사생쥐의 기본적인 동작에 관련된 스크립트
 {
     
-
     private float curTime;
     public float coolTime = 0.5f; //공격 딜레이
 
     private float inputX; // 움직임의 수직값
     private float inputY; // 움직임의 높이값
 
-    public GameObject GameManager;
+   
+    private int CurrentSkill;   //현재 스킬
 
     public Animator warriorAnimator; //워리어 애니메이터
     public static int currentDamage; //전사 생쥐가 현재 받을 데미지를 저장하는 변수
 
     
-    public float WarriorSpeed; //워리어의 속도를 저장하는 변수
+    private float WarriorSpeed; //워리어의 속도를 저장하는 변수
 
     public static int WarrorHP; //워리어의 최대체력을 저장하는 변수
     public static int currentHP; //현재 워리어의 체력을 저장한는 변수
@@ -32,6 +30,7 @@ public class WarriorController : MonoBehaviour
     public static int currentMP;//현재 워리어의 마나를 저장한는 변수
 
     public GameObject[] Weapon;// 무기를 담을 배열
+    public GameObject[] Skills;// 스킬 UI배열
 
     public Transform pos;   //히트박스 위치
     public Vector2 boxSize; //공격범위 크기
@@ -43,7 +42,7 @@ public class WarriorController : MonoBehaviour
 
     void Start()
     {
-        CurrntAttackPoint = 999;
+        CurrntAttackPoint = 2;
         Debug.Log("현재 공격력:" + CurrntAttackPoint);
 
          warriorAnimator = GetComponent<Animator>();
@@ -55,7 +54,6 @@ public class WarriorController : MonoBehaviour
         currentMP = playerStat.PlayerMP;
         playerStat.CurrentPlayer(); //플레이어의 현재 상태를 출력하는 함수
 
-        GameManager = GameObject.FindGameObjectWithTag("GameManager");
     }
 
     private void Awake()
@@ -179,6 +177,19 @@ public class WarriorController : MonoBehaviour
 
         }
 
+        if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 1)
+        {
+            Skill_01();
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 2)
+        {
+            Skill_02();
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 3)
+        {
+            Skill_03();
+        }
+
     }
 
 
@@ -201,20 +212,21 @@ public class WarriorController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag == "needle")
-        {
-            currentHP = currentHP - 1;
-        }
-    }
-
+    
 
     void AllWeaponDeactive()    //무기 자동 비활성화
     {
         foreach (GameObject wea in Weapon)
         {
             wea.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "needle")
+        {
+            currentHP = currentHP - 1;
         }
     }
 
@@ -243,7 +255,6 @@ public class WarriorController : MonoBehaviour
             Debug.Log("현재공격력 :" + CurrntAttackPoint);
         }
 
-    
     
     
 
@@ -457,7 +468,63 @@ public class WarriorController : MonoBehaviour
 
         }
 
+        if (other.gameObject.tag == "MoonNightSword" && Input.GetKey(KeyCode.F))
+        {
+            //문나이트 소드 전설
+            AllWeaponDeactive();
+            Weapon[21].SetActive(true);
+            CurrntAttackPoint = 24;
+
+            Debug.Log("현재공격력 :" + CurrntAttackPoint);
+
+        }
+
+
+        if (other.gameObject.tag == "Skill1" && Input.GetKey(KeyCode.F))
+        {
+            Skills[0].SetActive(true);
+            Skills[1].SetActive(false);
+            Skills[2].SetActive(false);
+            CurrentSkill = 1;
+
+        }
+
+        if (other.gameObject.tag == "Skill2" && Input.GetKey(KeyCode.F))
+        {
+            Skills[0].SetActive(false);
+            Skills[1].SetActive(true);
+            Skills[2].SetActive(false);
+            CurrentSkill = 2;
+
+        }
+
+        if (other.gameObject.tag == "Skill3" && Input.GetKey(KeyCode.F))
+        {
+            Skills[0].SetActive(false);
+            Skills[1].SetActive(false);
+            Skills[2].SetActive(true);
+            CurrentSkill = 3;
+
+        }
+
     }
+
+
+    void Skill_01()
+    {
+        Debug.Log("스킬1");
+    }
+
+    void Skill_02()
+    {
+        Debug.Log("스킬2");
+    }
+
+    void Skill_03()
+    {
+        Debug.Log("스킬3");
+    }
+
 
     private void OnDrawGizmos()
     {
