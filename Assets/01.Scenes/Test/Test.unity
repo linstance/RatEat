@@ -834,6 +834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BHPText: {fileID: 488496777}
+  Bosshp: {fileID: 2079967103}
 --- !u!1001 &982078403765264117
 PrefabInstance:
   m_ObjectHideFlags: 0
