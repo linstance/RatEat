@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2094878872115461839}
   - component: {fileID: 872114017198880947}
   - component: {fileID: 9175341203257592533}
+  - component: {fileID: -5611250801822636978}
   m_Layer: 0
   m_Name: Cane
   m_TagString: Cane
@@ -108,3 +109,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &-5611250801822636978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2454664732388118882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a021f62626af2434a8000e69036e7ba4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -39,6 +39,9 @@ public class WarriorController : MonoBehaviour
 
     public AudioClip AttackBgm;
     public AudioSource PlayerAdo;
+    public GameObject PlayerBullet; //플레이어가 쏘는 화염구
+    public 
+                                 
 
     void Start()
     {
@@ -200,7 +203,7 @@ public class WarriorController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            currentHP -= 100;
+            currentHP -= 5;
             Debug.Log("체력감소");
         }
     }
@@ -515,17 +518,30 @@ public class WarriorController : MonoBehaviour
 
     void Skill_01()
     {
-        Debug.Log("스킬1");
+        if ( currentHP < 10 )
+        {
+            WarriorController.currentHP += 3;
+        }
+        if ( currentHP >= 10 )
+        {
+            WarriorController.currentHP += 0;
+        }
+            
+        
     }
 
     void Skill_02()
     {
-        Debug.Log("스킬2");
+        
     }
 
     void Skill_03()
     {
-        Debug.Log("스킬3");
+        GameObject temp = Instantiate(PlayerBullet);
+
+        temp.transform.position = pos.position;
+       
+
     }
 
 
