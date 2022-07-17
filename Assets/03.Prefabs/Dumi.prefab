@@ -123,4 +123,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prfHp: {fileID: 6452938967189567332, guid: e78c462fb2fe86547a02974376b72791, type: 3}
   canvas: {fileID: 0}
-  height: 0.7
+  height: 1.3

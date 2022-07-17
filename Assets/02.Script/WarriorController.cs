@@ -137,8 +137,11 @@ public class WarriorController : MonoBehaviour
                     {
                         collider.GetComponent<Ant>().takeAntDamage(CurrntAttackPoint);
                     }
-
-                     if(collider.tag == "redAnt")
+                    if (collider.tag == "Dumi")
+                    {
+                        collider.GetComponent<Dumi>().takeAntDamage(CurrntAttackPoint);
+                    }
+                    if (collider.tag == "redAnt")
                     {
                         collider.GetComponent<redAnt>().takeRedAntDamage(CurrntAttackPoint);
                     }

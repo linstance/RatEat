@@ -21,11 +21,8 @@ public class Dumi : MonoBehaviour
             Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + height, 0));
         hpBar.position = _hpBarPos;
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    public void takeAntDamage(int Damage)
     {
-        if (other.tag == "needleSword")
-        {
-            DumiHpBar.DCHealth -= 2;
-        }
+        DumiHpBar.DCHealth = DumiHpBar.DCHealth - Damage;
     }
 }
