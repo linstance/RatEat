@@ -1131,8 +1131,10 @@ MonoBehaviour:
   - {fileID: 0}
   pos: {fileID: 3123649705360909062}
   boxSize: {x: 1, y: 1}
-  AttackBgm: {fileID: 8300000, guid: 6b7bc9c8542d55a45815e6d8035e3989, type: 3}
+  AttackBgm: {fileID: 8300000, guid: ff90709f3f4dad74b98d8f0eef389450, type: 3}
   PlayerAdo: {fileID: 2116039347}
+  PlayerBullet: {fileID: 7370157570819403772, guid: 09d0966bd86981f40951e428fd649568,
+    type: 3}
 --- !u!82 &2116039347
 AudioSource:
   m_ObjectHideFlags: 0
