@@ -43,6 +43,9 @@ TagManager:
   - Skill2
   - Skill3
   - MoonNightSword
+  - Dog
+  - PlayerBullet
+  - Hero
   layers:
   - Default
   - TransparentFX
