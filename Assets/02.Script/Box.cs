@@ -7,9 +7,9 @@ public class Box : MonoBehaviour
 
     public GameObject[] Weapons; // 무기를 담을 배열
 
-    public Animator animator; // 애니메이터
-
-   private GameObject clone; // 클론 오브젝트
+    public Animator animator;// 애니메이터
+    public GameObject ani; // 효과 애니메이션
+    private GameObject clone; // 클론 오브젝트
 
     private int r; // 랜덤
  
@@ -28,6 +28,7 @@ public class Box : MonoBehaviour
         {
 
             animator.SetBool("Open", true);
+            ani.gameObject.SetActive(true);
             Invoke("InstantiateWeapon", 0f);
 
         }
