@@ -40,12 +40,11 @@ public class WarriorController : MonoBehaviour
     public AudioClip AttackBgm;
     public AudioSource PlayerAdo;
     public GameObject PlayerBullet; //플레이어가 쏘는 화염구
-    public 
                                  
 
     void Start()
     {
-        CurrntAttackPoint = 2;
+        CurrntAttackPoint = 3;
         Debug.Log("현재 공격력:" + CurrntAttackPoint);
 
          warriorAnimator = GetComponent<Animator>();
@@ -256,7 +255,7 @@ public class WarriorController : MonoBehaviour
             
             AllWeaponDeactive();
             Weapon[2].SetActive(true);
-            CurrntAttackPoint = 2;
+            CurrntAttackPoint = 3;
 
             Debug.Log("현재공격력 :" + CurrntAttackPoint);
         }
