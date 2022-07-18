@@ -8,7 +8,7 @@ public class WarriorController : MonoBehaviour
 
     //전사생쥐에 움직임 및 전사생쥐의 기본적인 동작에 관련된 스크립트
 {
-    
+    bool isinvi = false;
     private float curTime;
     public float coolTime = 0.5f; //공격 딜레이
 
@@ -40,12 +40,11 @@ public class WarriorController : MonoBehaviour
     public AudioClip AttackBgm;
     public AudioSource PlayerAdo;
     public GameObject PlayerBullet; //플레이어가 쏘는 화염구
-    public 
                                  
 
     void Start()
     {
-        CurrntAttackPoint = 2;
+        CurrntAttackPoint = 3;
         Debug.Log("현재 공격력:" + CurrntAttackPoint);
 
          warriorAnimator = GetComponent<Animator>();
@@ -189,17 +188,28 @@ public class WarriorController : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 1)
+        if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 1 && currentMP > 0)
         {
-            Skill_01();
+            if (currentMP > 0)
+            {
+                Skill_01();
+            }
+            
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 2)
+        else if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 2 && currentMP > 0)
         {
-            Skill_02();
+            if (currentMP > 0)
+            {
+                Skill_02();
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 3)
+        else if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 3 && currentMP > 0)
         {
-            Skill_03();
+            if (currentMP > 0)
+            {
+                Skill_03();
+            }
+               
         }
 
     }
@@ -238,7 +248,7 @@ public class WarriorController : MonoBehaviour
     {
         if (other.tag == "needle")
         {
-            currentHP = currentHP - 1;
+            PlayerTakeDamage(1);
         }
     }
 
@@ -247,10 +257,10 @@ public class WarriorController : MonoBehaviour
     {
         if (other.gameObject.tag == "BronzeSword" && Input.GetKey(KeyCode.F))
         {
-            //동검 Common
+            //동검 rare
             AllWeaponDeactive();
             Weapon[0].SetActive(true);
-            CurrntAttackPoint = 4;
+            CurrntAttackPoint = 5;
 
             Debug.Log("현재공격력 :" + CurrntAttackPoint);
 
@@ -262,7 +272,7 @@ public class WarriorController : MonoBehaviour
             
             AllWeaponDeactive();
             Weapon[2].SetActive(true);
-            CurrntAttackPoint = 2;
+            CurrntAttackPoint = 3;
 
             Debug.Log("현재공격력 :" + CurrntAttackPoint);
         }
@@ -295,7 +305,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Bet" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //방망이 Common
             AllWeaponDeactive();
             Weapon[4].SetActive(true);
             CurrntAttackPoint = 3;
@@ -306,7 +316,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Candy" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //사탕 Common
             AllWeaponDeactive();
             Weapon[5].SetActive(true);
             CurrntAttackPoint = 3;
@@ -317,7 +327,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Cane" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //지팡이 Common
             AllWeaponDeactive();
             Weapon[6].SetActive(true);
             CurrntAttackPoint = 3;
@@ -328,7 +338,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Carrot" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //당근 Common
             AllWeaponDeactive();
             Weapon[7].SetActive(true);
             CurrntAttackPoint = 3;
@@ -339,7 +349,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Dumbbell" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //덤벨 Common
             AllWeaponDeactive();
             Weapon[8].SetActive(true);
             CurrntAttackPoint = 3;
@@ -350,10 +360,10 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Earpick" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //귀이개 rare
             AllWeaponDeactive();
             Weapon[9].SetActive(true);
-            CurrntAttackPoint = 3;
+            CurrntAttackPoint = 5;
 
             Debug.Log("현재공격력 :" + CurrntAttackPoint);
 
@@ -361,7 +371,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Flower" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //꽃 Common
             AllWeaponDeactive();
             Weapon[10].SetActive(true);
             CurrntAttackPoint = 3;
@@ -372,7 +382,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Grass" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //풀떼기 Common
             AllWeaponDeactive();
             Weapon[11].SetActive(true);
             CurrntAttackPoint = 3;
@@ -383,10 +393,10 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Hammer" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //망치 rare
             AllWeaponDeactive();
             Weapon[12].SetActive(true);
-            CurrntAttackPoint = 3;
+            CurrntAttackPoint = 5;
 
             Debug.Log("현재공격력 :" + CurrntAttackPoint);
 
@@ -394,7 +404,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Icecream" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //아이스크림 Common
             AllWeaponDeactive();
             Weapon[13].SetActive(true);
             CurrntAttackPoint = 3;
@@ -405,7 +415,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Legend" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //불검 Common
             AllWeaponDeactive();
             Weapon[14].SetActive(true);
             CurrntAttackPoint = 3;
@@ -416,10 +426,10 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Pan" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //프라이팬 rare
             AllWeaponDeactive();
             Weapon[15].SetActive(true);
-            CurrntAttackPoint = 3;
+            CurrntAttackPoint = 5;
 
             Debug.Log("현재공격력 :" + CurrntAttackPoint);
 
@@ -427,7 +437,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Pencil" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //연필 Common
             AllWeaponDeactive();
             Weapon[16].SetActive(true);
             CurrntAttackPoint = 3;
@@ -438,7 +448,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Pepero" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //빼빼로 Common
             AllWeaponDeactive();
             Weapon[17].SetActive(true);
             CurrntAttackPoint = 3;
@@ -449,10 +459,10 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Plunger" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //뚜러 rare
             AllWeaponDeactive();
             Weapon[18].SetActive(true);
-            CurrntAttackPoint = 3;
+            CurrntAttackPoint = 5;
 
             Debug.Log("현재공격력 :" + CurrntAttackPoint);
 
@@ -460,7 +470,7 @@ public class WarriorController : MonoBehaviour
         
         if (other.gameObject.tag == "Shovel" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //삽 Common
             AllWeaponDeactive();
             Weapon[19].SetActive(true);
             CurrntAttackPoint = 3;
@@ -471,7 +481,8 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Umbrella" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //우산
+            //Common
             AllWeaponDeactive();
             Weapon[20].SetActive(true);
             CurrntAttackPoint = 3;
@@ -524,7 +535,7 @@ public class WarriorController : MonoBehaviour
 
     void Skill_01()
     {
-        currentMP -= 10;
+        currentMP -= 30;
         if ( currentHP < 10 )
         {
             WarriorController.currentHP += 1;
@@ -539,14 +550,14 @@ public class WarriorController : MonoBehaviour
 
     void Skill_02()
     {
-        currentMP -= 50;
+        currentMP -= 30;
         
         StartCoroutine(NoHit());   
     }
 
     void Skill_03()
     {
-        currentMP -= 40;
+        currentMP -= 30;
 
         for (int i = 0; i < 360; i += 90)
         {
@@ -571,17 +582,37 @@ public class WarriorController : MonoBehaviour
 
     public void PlayerTakeDamage(int Damage)
     {
-        currentHP = currentHP - Damage;
-        warriorAnimator.SetBool("IsHit", true);
+        if(isinvi == false)
+        {
+            currentHP = currentHP - Damage;
+            warriorAnimator.SetBool("IsHit",true);
+            Invoke("SetFalseHit", 1f);
+        }
+        
+        if(isinvi == true)
+        {
+            Damage = 0;
+            currentHP = currentHP - Damage;
+            //warriorAnimator.SetBool("IsHit",false);
+        }
+
+    }
+
+    void SetFalseHit()
+    {
+        warriorAnimator.SetBool("IsHit", false);
     }
 
     IEnumerator NoHit()
     {
-        //this.gameObject.layer = 10;
+        
+        isinvi = true;
         GetComponent<SpriteRenderer>().color = Color.yellow;
+
         yield return new WaitForSeconds(3.0f);
-        gameObject.GetComponent<BoxCollider2D>().enabled = true;
+
         GetComponent<SpriteRenderer>().color = Color.white;
+        isinvi = false;
     }
 
 

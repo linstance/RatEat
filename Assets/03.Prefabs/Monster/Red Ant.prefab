@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3558498991395884769}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3558498992572323572}
   - component: {fileID: 3558498992572323576}
   - component: {fileID: 3558498992572323583}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red Ant
   m_TagString: redAnt
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3558498992572323573}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 22.56, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children:
   - {fileID: 3558498991395884769}
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e8a095868af244e892a4e3c696ec99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackPoint: 3
+  AttackPoint: 2
   RedAntHp: 10
   RedAntspeed: 1.5
   RedAntminimumDistance: 1.5

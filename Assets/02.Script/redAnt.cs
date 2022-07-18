@@ -44,7 +44,13 @@ public class redAnt : MonoBehaviour
 
     }
 
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "PlayerBullet")
+        {
+            takeRedAntDamage(5);
+        }
+    }
 
     void RedAntMoveAttack()
     {
@@ -64,7 +70,7 @@ public class redAnt : MonoBehaviour
 
                     if (curTime <= 0)
                     {
-                        WarriorController.currentHP = WarriorController.currentHP - AttackPoint;
+                        collider.GetComponent<WarriorController>().PlayerTakeDamage(AttackPoint);
                         curTime = coolTime;
                     }
                     else
