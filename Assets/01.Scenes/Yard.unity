@@ -7930,6 +7930,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1317479055, guid: 3d14952e0079f174284297b9ca60c5d6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b7b73938114a50b4381364142c87463a,
+        type: 3}
+    - target: {fileID: 1317479055, guid: 3d14952e0079f174284297b9ca60c5d6, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3123649704597966745, guid: 3d14952e0079f174284297b9ca60c5d6,
         type: 3}
       propertyPath: coolTime

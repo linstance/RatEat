@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MiniMap : MonoBehaviour
 {
-    public GameObject closebox;
-    public GameObject openbox;
+    public GameObject Off_icon;
+    public GameObject On_icon;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +21,8 @@ public class MiniMap : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            closebox.gameObject.SetActive(false);
-            openbox.gameObject.SetActive(true);
+            Off_icon.gameObject.SetActive(false);
+            On_icon.gameObject.SetActive(true);
 
         }
     }
