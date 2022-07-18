@@ -19,7 +19,7 @@ public class Dog : MonoBehaviour
     private float EndTime = 4f; //딜레이
     private float StartTime; 
 
-    private Animator Doganimator;    //애니메이터
+    public Animator Doganimator;    //애니메이터
 
     void Start()
     {
@@ -36,7 +36,7 @@ public class Dog : MonoBehaviour
         {
             Debug.Log("엄준식");
             Doganimator.SetTrigger("Is_Die");
-            Invoke("DogDie", 1f);
+            Invoke("DogDie", 2f);
             isLife = false;
         }
 
@@ -81,7 +81,8 @@ public class Dog : MonoBehaviour
     public void DogTakeDamage(int Damage)
     {
         CurDogHp = CurDogHp - Damage;
-
+        StartCoroutine(hitdog());
+    
      
     }
 
@@ -107,5 +108,11 @@ public class Dog : MonoBehaviour
     public void DogDie()
     {
         gameObject.SetActive(false);
+    }
+    IEnumerator hitdog()
+    {
+        GetComponent<SpriteRenderer>().color = Color.red;
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
