@@ -184,15 +184,26 @@ public class WarriorController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 1)
         {
-            Skill_01();
+            if (currentMP > 0)
+            {
+                Skill_01();
+            }
+            
         }
         else if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 2)
         {
-            Skill_02();
+            if (currentMP > 0)
+            {
+                Skill_02();
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 3)
         {
-            Skill_03();
+            if (currentMP > 0)
+            {
+                Skill_03();
+            }
+               
         }
 
     }

@@ -78,6 +78,14 @@ public class flyHell : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "PlayerBullet")
+        {
+            takeflyHelDamage(5);
+        }
+    }
+
     private void flyHellDie()
     {
         gameObject.SetActive(false);
