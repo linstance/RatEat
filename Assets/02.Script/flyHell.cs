@@ -8,12 +8,11 @@ public class flyHell : MonoBehaviour
 
     public GameObject fireball;
 
-    public float coolTime;
+    public float coolTime;  //쿨타임
     private float curTime;
-    public float BeeSpeed;
-    public float BeeminimumDistance;   //추적 범위
-
-    public Animator BeeAnimator;
+    public float flyHellDistance; //추적 범위
+    
+    public Animator flyHellAnimator;    //애니메이터
 
     private GameObject target;  //타겟
     private bool IsLife = true; //벌 생존 여부
@@ -29,14 +28,19 @@ public class flyHell : MonoBehaviour
     {
         if (flyHellHP <= 0)
         {
-            BeeAnimator.SetTrigger("IsPlantDie");
-            Invoke("flyHelDie", 1f);
+            flyHellAnimator.SetTrigger("IsPlantDie");
+            Invoke("flyHellDie", 1f);
             IsLife = false;
         }
 
         if (IsLife == true)
         {
-            flyHellAttack();
+            
+            
+            
+         flyHellAttack();
+            
+            
             Direction();
         }
 
@@ -59,21 +63,18 @@ public class flyHell : MonoBehaviour
     void flyHellAttack()
     {
 
-         if (Vector2.Distance(transform.position, target.transform.position) < BeeminimumDistance)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, -BeeSpeed * Time.deltaTime);
-        }
 
         if (Time.time > curTime)
         {
-            BeeAnimator.SetBool("IsPlantAttack", true);
+            flyHellAnimator.SetBool("IsPlantAttack", true);
             Instantiate(fireball, transform.position, Quaternion.identity);
             curTime = Time.time + coolTime;
         }
         else
         {
-            BeeAnimator.SetBool("IsBeeAttack", false);
+            flyHellAnimator.SetBool("IsPlantAttack", false);
         }
+
 
     }
 

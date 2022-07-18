@@ -571,7 +571,7 @@ public class WarriorController : MonoBehaviour
 
     IEnumerator NoHit()
     {
-        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        //this.gameObject.layer = 10;
         GetComponent<SpriteRenderer>().color = Color.yellow;
         yield return new WaitForSeconds(3.0f);
         gameObject.GetComponent<BoxCollider2D>().enabled = true;

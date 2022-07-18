@@ -46,7 +46,7 @@ TagManager:
   - Dog
   - PlayerBullet
   - Hero
-  - Dumi
+  - Fireball
   layers:
   - Default
   - TransparentFX
