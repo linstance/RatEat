@@ -48,6 +48,7 @@ TagManager:
   - Hero
   - Fireball
   - Dumi
+  - Cat
   layers:
   - Default
   - TransparentFX
@@ -64,7 +65,7 @@ TagManager:
   - MiniMap
   - GameOver
   - ' MiniMap map'
-  - Hero
+  - 
   - 
   - 
   - 

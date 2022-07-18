@@ -81,8 +81,6 @@ public class Dog : MonoBehaviour
     public void DogTakeDamage(int Damage)
     {
         CurDogHp = CurDogHp - Damage;
-
-     
     }
 
    void shot()
