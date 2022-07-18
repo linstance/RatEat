@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4697814935633759898}
   - component: {fileID: 4697814935633759899}
   - component: {fileID: 4697814935633759896}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: flyHell
   m_TagString: flyHell
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 762597108}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7912179454571235247}
   - component: {fileID: 1941280310}
   - component: {fileID: 1941280312}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ant
   m_TagString: Ant
   m_Icon: {fileID: 0}

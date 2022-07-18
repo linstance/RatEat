@@ -22,8 +22,8 @@ public class GameManager : MonoBehaviour
     {
         if(WarriorController.currentHP <= 0)
         {
-            Invoke("DestroyGM", 0.7f);
-            Invoke("Ds", 0.71f);
+            Invoke("DestroyGM", 0.9f);
+            Invoke("Ds", 0.91f);
         }
     }
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3063477596622482754}
   - component: {fileID: 3284169426902093385}
   - component: {fileID: -1058327818284834831}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sting2
   m_TagString: needle
   m_Icon: {fileID: 0}
