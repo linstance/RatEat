@@ -7916,6 +7916,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Warrior
       objectReference: {fileID: 0}
+    - target: {fileID: 3123649704873874159, guid: 3d14952e0079f174284297b9ca60c5d6,
+        type: 3}
+      propertyPath: m_TagString
+      value: needleSword
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d14952e0079f174284297b9ca60c5d6, type: 3}
 --- !u!1 &791956372
@@ -11914,6 +11919,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dumi
       objectReference: {fileID: 0}
+    - target: {fileID: 4771571755452464330, guid: 30514207cd52e834eaf93b9ed9501766,
+        type: 3}
+      propertyPath: m_TagString
+      value: Dumi
+      objectReference: {fileID: 0}
     - target: {fileID: 4771571755452464335, guid: 30514207cd52e834eaf93b9ed9501766,
         type: 3}
       propertyPath: m_RootOrder
@@ -11922,7 +11932,7 @@ PrefabInstance:
     - target: {fileID: 4771571755452464335, guid: 30514207cd52e834eaf93b9ed9501766,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.598074
+      value: -20.5
       objectReference: {fileID: 0}
     - target: {fileID: 4771571755452464335, guid: 30514207cd52e834eaf93b9ed9501766,
         type: 3}
