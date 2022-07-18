@@ -147,6 +147,7 @@ public class WarriorController : MonoBehaviour
                     {
                         collider.GetComponent<redAnt>().takeRedAntDamage(CurrntAttackPoint);
                     }
+                   
                     else if(collider.tag == "Fly")
                     {
                         collider.GetComponent<Ant>().takeAntDamage(CurrntAttackPoint);
@@ -167,6 +168,11 @@ public class WarriorController : MonoBehaviour
                     {
                         collider.GetComponent<Dog>().DogTakeDamage(CurrntAttackPoint);
                     }
+                    else if (collider.tag == "Cat")
+                    {
+                        collider.GetComponent<Cat>().DogTakeDamage(CurrntAttackPoint);
+                    }
+                    
                 }
 
                 curTime = coolTime;
@@ -184,15 +190,26 @@ public class WarriorController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 1 && currentMP > 0)
         {
-            Skill_01();
+            if (currentMP > 0)
+            {
+                Skill_01();
+            }
+            
         }
         else if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 2 && currentMP > 0)
         {
-            Skill_02();
+            if (currentMP > 0)
+            {
+                Skill_02();
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 3 && currentMP > 0)
         {
-            Skill_03();
+            if (currentMP > 0)
+            {
+                Skill_03();
+            }
+               
         }
 
     }

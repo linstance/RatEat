@@ -46,6 +46,13 @@ public class Ant : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "PlayerBullet")
+        {
+            takeAntDamage(5);
+        }
+    }
 
 
     void MoveAttack()
@@ -94,12 +101,19 @@ public class Ant : MonoBehaviour
     public void takeAntDamage(int Damage)
     {
        AntHp =  AntHp - Damage;
+       AntAnimator.SetBool("IsAntHit", true);
+       Invoke("SetFalseHit", 0.2f);
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(pos.position, boxSize);
+    }
+
+    private void SetFalseHit()
+    {
+        AntAnimator.SetBool("IsAntHit", false);
     }
 
     private void AntDie()
