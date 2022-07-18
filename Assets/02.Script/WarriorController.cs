@@ -147,18 +147,9 @@ public class WarriorController : MonoBehaviour
                     {
                         collider.GetComponent<redAnt>().takeRedAntDamage(CurrntAttackPoint);
                     }
-                   
-                    else if(collider.tag == "Fly")
-                    {
-                        collider.GetComponent<Ant>().takeAntDamage(CurrntAttackPoint);
-                    }
                     else if (collider.tag == "flyHell")
                     {
-                        collider.GetComponent<Ant>().takeAntDamage(CurrntAttackPoint);
-                    }
-                    else if (collider.tag == "Spider")
-                    {
-                        collider.GetComponent<Ant>().takeAntDamage(CurrntAttackPoint);
+                        collider.GetComponent<flyHell>().takeflyHelDamage(CurrntAttackPoint);
                     }
                     else if (collider.tag == "Bee")
                     {
@@ -170,7 +161,7 @@ public class WarriorController : MonoBehaviour
                     }
                     else if (collider.tag == "Cat")
                     {
-                        collider.GetComponent<Cat>().DogTakeDamage(CurrntAttackPoint);
+                        collider.GetComponent<Cat>().CatTakeDamage(CurrntAttackPoint);
                     }
                     
                 }
@@ -249,6 +240,11 @@ public class WarriorController : MonoBehaviour
         if (other.tag == "needle")
         {
             PlayerTakeDamage(1);
+        }
+
+        if (other.tag == "Fireball")
+        {
+            PlayerTakeDamage(2);
         }
     }
 

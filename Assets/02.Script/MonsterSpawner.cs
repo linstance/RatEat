@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour
 {
+    private bool isSpawner = true;
+
     public GameObject Monster1;
     public GameObject Monster2;
     public GameObject Monster3;
@@ -13,9 +15,10 @@ public class MonsterSpawner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player" && isSpawner == true)
         {
             Invoke("MonsterSet", 0.5f);
+            isSpawner = false;
         }
     }
 

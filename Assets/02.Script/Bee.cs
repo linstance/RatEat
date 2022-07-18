@@ -80,6 +80,7 @@ public class Bee : MonoBehaviour
             Instantiate(needle, transform.position, Quaternion.identity);
             curTime = Time.time + coolTime;
         }
+
         else
         {
             BeeAnimator.SetBool("IsBeeAttack", false);
