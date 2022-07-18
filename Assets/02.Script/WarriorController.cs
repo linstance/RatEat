@@ -154,7 +154,7 @@ public class WarriorController : MonoBehaviour
                     }
                     else if (collider.tag == "flyHell")
                     {
-                        collider.GetComponent<flyHell>().takeflyHelDamage(CurrntAttackPoint);
+                        collider.GetComponent<Ant>().takeAntDamage(CurrntAttackPoint);
                     }
                     else if (collider.tag == "Spider")
                     {
@@ -230,14 +230,9 @@ public class WarriorController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "needle")
+        if (other.tag == "needle")
         {
             currentHP = currentHP - 1;
-        }
-
-        if(other.gameObject.tag == "Fireball")
-        {
-            currentHP = currentHP - 2;
         }
     }
 
@@ -576,7 +571,7 @@ public class WarriorController : MonoBehaviour
 
     IEnumerator NoHit()
     {
-        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        //this.gameObject.layer = 10;
         GetComponent<SpriteRenderer>().color = Color.yellow;
         yield return new WaitForSeconds(3.0f);
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
