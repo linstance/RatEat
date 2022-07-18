@@ -6,6 +6,7 @@ public class Cat : MonoBehaviour
 {
     private bool isLife;
     private Animator Catanimator;
+    public GameObject Potal;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class Cat : MonoBehaviour
             Catanimator.SetTrigger("is_Die");
             Invoke("CatDie", 1f);
             isLife = false;
+            Potal.SetActive(true);
         }
     }
     public void DogTakeDamage(int Damage)

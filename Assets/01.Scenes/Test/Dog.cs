@@ -15,7 +15,7 @@ public class Dog : MonoBehaviour
 
     public float rot_Speed; //회전속도
     public GameObject bullet;   //총알 오브젝트
-
+    public GameObject Potal;
     private float EndTime = 4f; //딜레이
     private float StartTime; 
 
@@ -38,6 +38,7 @@ public class Dog : MonoBehaviour
             Doganimator.SetTrigger("Is_Die");
             Invoke("DogDie", 2f);
             isLife = false;
+            Potal.SetActive(true);
         }
 
        if(isLife == true)
@@ -49,7 +50,6 @@ public class Dog : MonoBehaviour
                 shot();
                 StartTime = 0;
             }
-
             Direction();
             Dam();
             
