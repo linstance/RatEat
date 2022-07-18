@@ -182,7 +182,7 @@ public class WarriorController : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 1)
+        if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 1 && currentMP > 0)
         {
             if (currentMP > 0)
             {
@@ -190,14 +190,14 @@ public class WarriorController : MonoBehaviour
             }
             
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 2)
+        else if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 2 && currentMP > 0)
         {
             if (currentMP > 0)
             {
                 Skill_02();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 3)
+        else if (Input.GetKeyDown(KeyCode.Space) && CurrentSkill == 3 && currentMP > 0)
         {
             if (currentMP > 0)
             {
@@ -529,7 +529,7 @@ public class WarriorController : MonoBehaviour
 
     void Skill_01()
     {
-        currentMP -= 10;
+        currentMP -= 30;
         if ( currentHP < 10 )
         {
             WarriorController.currentHP += 1;
@@ -544,14 +544,14 @@ public class WarriorController : MonoBehaviour
 
     void Skill_02()
     {
-        currentMP -= 50;
+        currentMP -= 30;
         
         StartCoroutine(NoHit());   
     }
 
     void Skill_03()
     {
-        currentMP -= 40;
+        currentMP -= 30;
 
         for (int i = 0; i < 360; i += 90)
         {
