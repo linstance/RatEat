@@ -3083,7 +3083,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 7bf394df13f355e4584e88e516e5bce5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_FlipX: 0
@@ -4451,7 +4451,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b465710187b09844dbd72a035a5b8425, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_FlipX: 0
@@ -7915,6 +7915,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Warrior
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123649704873874159, guid: 3d14952e0079f174284297b9ca60c5d6,
+        type: 3}
+      propertyPath: m_TagString
+      value: needleSword
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d14952e0079f174284297b9ca60c5d6, type: 3}
@@ -11914,6 +11919,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dumi
       objectReference: {fileID: 0}
+    - target: {fileID: 4771571755452464330, guid: 30514207cd52e834eaf93b9ed9501766,
+        type: 3}
+      propertyPath: m_TagString
+      value: Dumi
+      objectReference: {fileID: 0}
     - target: {fileID: 4771571755452464335, guid: 30514207cd52e834eaf93b9ed9501766,
         type: 3}
       propertyPath: m_RootOrder
@@ -11922,7 +11932,7 @@ PrefabInstance:
     - target: {fileID: 4771571755452464335, guid: 30514207cd52e834eaf93b9ed9501766,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.598074
+      value: -20.5
       objectReference: {fileID: 0}
     - target: {fileID: 4771571755452464335, guid: 30514207cd52e834eaf93b9ed9501766,
         type: 3}
