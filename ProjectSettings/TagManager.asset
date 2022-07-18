@@ -47,6 +47,8 @@ TagManager:
   - PlayerBullet
   - Hero
   - Fireball
+  - Dumi
+  - Cat
   layers:
   - Default
   - TransparentFX

@@ -148,6 +148,7 @@ public class WarriorController : MonoBehaviour
                     {
                         collider.GetComponent<redAnt>().takeRedAntDamage(CurrntAttackPoint);
                     }
+                   
                     else if(collider.tag == "Fly")
                     {
                         collider.GetComponent<Ant>().takeAntDamage(CurrntAttackPoint);
@@ -168,6 +169,11 @@ public class WarriorController : MonoBehaviour
                     {
                         collider.GetComponent<Dog>().DogTakeDamage(CurrntAttackPoint);
                     }
+                    else if (collider.tag == "Cat")
+                    {
+                        collider.GetComponent<Cat>().DogTakeDamage(CurrntAttackPoint);
+                    }
+                    
                 }
 
                 curTime = coolTime;
