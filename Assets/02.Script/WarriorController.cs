@@ -8,7 +8,7 @@ public class WarriorController : MonoBehaviour
 
     //전사생쥐에 움직임 및 전사생쥐의 기본적인 동작에 관련된 스크립트
 {
-    
+    bool isinvi = false;
     private float curTime;
     public float coolTime = 0.5f; //공격 딜레이
 
@@ -231,7 +231,7 @@ public class WarriorController : MonoBehaviour
     {
         if (other.tag == "needle")
         {
-            currentHP = currentHP - 1;
+            PlayerTakeDamage(1);
         }
     }
 
@@ -565,17 +565,37 @@ public class WarriorController : MonoBehaviour
 
     public void PlayerTakeDamage(int Damage)
     {
-        currentHP = currentHP - Damage;
-        warriorAnimator.SetBool("IsHit", true);
+        if(isinvi == false)
+        {
+            currentHP = currentHP - Damage;
+            warriorAnimator.SetBool("IsHit",true);
+            Invoke("SetFalseHit", 1f);
+        }
+        
+        if(isinvi == true)
+        {
+            Damage = 0;
+            currentHP = currentHP - Damage;
+            //warriorAnimator.SetBool("IsHit",false);
+        }
+
+    }
+
+    void SetFalseHit()
+    {
+        warriorAnimator.SetBool("IsHit", false);
     }
 
     IEnumerator NoHit()
     {
-        //this.gameObject.layer = 10;
+        
+        isinvi = true;
         GetComponent<SpriteRenderer>().color = Color.yellow;
+
         yield return new WaitForSeconds(3.0f);
-        gameObject.GetComponent<BoxCollider2D>().enabled = true;
+
         GetComponent<SpriteRenderer>().color = Color.white;
+        isinvi = false;
     }
 
 

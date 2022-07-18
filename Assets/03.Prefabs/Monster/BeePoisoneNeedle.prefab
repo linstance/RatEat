@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4387005195874159724}
   - component: {fileID: 4387005195874159722}
   - component: {fileID: 4387005195874159721}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeePoisoneNeedle
   m_TagString: needle
   m_Icon: {fileID: 0}

@@ -47,6 +47,7 @@ TagManager:
   - PlayerBullet
   - Hero
   - Fireball
+  - Dumi
   layers:
   - Default
   - TransparentFX
@@ -63,7 +64,7 @@ TagManager:
   - MiniMap
   - GameOver
   - ' MiniMap map'
-  - 
+  - Hero
   - 
   - 
   - 

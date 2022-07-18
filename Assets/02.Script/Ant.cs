@@ -66,7 +66,8 @@ public class Ant : MonoBehaviour
                    
                     if(curTime <= 0)
                     {
-                        WarriorController.currentHP = WarriorController.currentHP - AttackPoint;
+                        //WarriorController.currentHP = WarriorController.currentHP - AttackPoint;
+                        collider.GetComponent<WarriorController>().PlayerTakeDamage(AttackPoint);
                         curTime = coolTime;
                     }
                     else

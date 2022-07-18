@@ -64,7 +64,7 @@ public class redAnt : MonoBehaviour
 
                     if (curTime <= 0)
                     {
-                        WarriorController.currentHP = WarriorController.currentHP - AttackPoint;
+                        collider.GetComponent<WarriorController>().PlayerTakeDamage(AttackPoint);
                         curTime = coolTime;
                     }
                     else
