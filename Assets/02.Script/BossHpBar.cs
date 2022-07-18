@@ -11,7 +11,6 @@ public class BossHpBar : MonoBehaviour
 {
     Image BHP;
     public TextMeshProUGUI BHPText;
-    public GameObject Bosshp;
     private int DogmaxHealth;
     private int isDogCurrentHP;
     // Start is called before the first frame update
@@ -28,10 +27,11 @@ public class BossHpBar : MonoBehaviour
     {
         isDogCurrentHP = Dog.CurDogHp;
         BHP.fillAmount = isDogCurrentHP / 50f;
-        BHPText.text = isDogCurrentHP.ToString() + "/" + DogmaxHealth.ToString();
+        BHPText.text = isDogCurrentHP.ToString() + "/ 50";
+        
         if (isDogCurrentHP <= 0)
         {
-            Bosshp.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 }
