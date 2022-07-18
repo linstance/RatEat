@@ -240,10 +240,10 @@ public class WarriorController : MonoBehaviour
     {
         if (other.gameObject.tag == "BronzeSword" && Input.GetKey(KeyCode.F))
         {
-            //동검 Common
+            //동검 rare
             AllWeaponDeactive();
             Weapon[0].SetActive(true);
-            CurrntAttackPoint = 4;
+            CurrntAttackPoint = 5;
 
             Debug.Log("현재공격력 :" + CurrntAttackPoint);
 
@@ -288,7 +288,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Bet" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //방망이 Common
             AllWeaponDeactive();
             Weapon[4].SetActive(true);
             CurrntAttackPoint = 3;
@@ -299,7 +299,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Candy" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //사탕 Common
             AllWeaponDeactive();
             Weapon[5].SetActive(true);
             CurrntAttackPoint = 3;
@@ -310,7 +310,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Cane" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //지팡이 Common
             AllWeaponDeactive();
             Weapon[6].SetActive(true);
             CurrntAttackPoint = 3;
@@ -321,7 +321,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Carrot" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //당근 Common
             AllWeaponDeactive();
             Weapon[7].SetActive(true);
             CurrntAttackPoint = 3;
@@ -332,7 +332,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Dumbbell" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //덤벨 Common
             AllWeaponDeactive();
             Weapon[8].SetActive(true);
             CurrntAttackPoint = 3;
@@ -343,10 +343,10 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Earpick" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //귀이개 rare
             AllWeaponDeactive();
             Weapon[9].SetActive(true);
-            CurrntAttackPoint = 3;
+            CurrntAttackPoint = 5;
 
             Debug.Log("현재공격력 :" + CurrntAttackPoint);
 
@@ -354,7 +354,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Flower" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //꽃 Common
             AllWeaponDeactive();
             Weapon[10].SetActive(true);
             CurrntAttackPoint = 3;
@@ -365,7 +365,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Grass" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //풀떼기 Common
             AllWeaponDeactive();
             Weapon[11].SetActive(true);
             CurrntAttackPoint = 3;
@@ -376,10 +376,10 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Hammer" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //망치 rare
             AllWeaponDeactive();
             Weapon[12].SetActive(true);
-            CurrntAttackPoint = 3;
+            CurrntAttackPoint = 5;
 
             Debug.Log("현재공격력 :" + CurrntAttackPoint);
 
@@ -387,7 +387,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Icecream" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //아이스크림 Common
             AllWeaponDeactive();
             Weapon[13].SetActive(true);
             CurrntAttackPoint = 3;
@@ -398,7 +398,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Legend" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //불검 Common
             AllWeaponDeactive();
             Weapon[14].SetActive(true);
             CurrntAttackPoint = 3;
@@ -409,10 +409,10 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Pan" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //프라이팬 rare
             AllWeaponDeactive();
             Weapon[15].SetActive(true);
-            CurrntAttackPoint = 3;
+            CurrntAttackPoint = 5;
 
             Debug.Log("현재공격력 :" + CurrntAttackPoint);
 
@@ -420,7 +420,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Pencil" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //연필 Common
             AllWeaponDeactive();
             Weapon[16].SetActive(true);
             CurrntAttackPoint = 3;
@@ -431,7 +431,7 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Pepero" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //빼빼로 Common
             AllWeaponDeactive();
             Weapon[17].SetActive(true);
             CurrntAttackPoint = 3;
@@ -442,10 +442,10 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Plunger" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //뚜러 rare
             AllWeaponDeactive();
             Weapon[18].SetActive(true);
-            CurrntAttackPoint = 3;
+            CurrntAttackPoint = 5;
 
             Debug.Log("현재공격력 :" + CurrntAttackPoint);
 
@@ -453,7 +453,7 @@ public class WarriorController : MonoBehaviour
         
         if (other.gameObject.tag == "Shovel" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //삽 Common
             AllWeaponDeactive();
             Weapon[19].SetActive(true);
             CurrntAttackPoint = 3;
@@ -464,7 +464,8 @@ public class WarriorController : MonoBehaviour
 
         if (other.gameObject.tag == "Umbrella" && Input.GetKey(KeyCode.F))
         {
-            //바나나 Common
+            //우산
+            //Common
             AllWeaponDeactive();
             Weapon[20].SetActive(true);
             CurrntAttackPoint = 3;
