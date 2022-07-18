@@ -154,7 +154,7 @@ public class WarriorController : MonoBehaviour
                     }
                     else if (collider.tag == "flyHell")
                     {
-                        collider.GetComponent<Ant>().takeAntDamage(CurrntAttackPoint);
+                        collider.GetComponent<flyHell>().takeflyHelDamage(CurrntAttackPoint);
                     }
                     else if (collider.tag == "Spider")
                     {
@@ -230,9 +230,14 @@ public class WarriorController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "needle")
+        if (other.gameObject.tag == "needle")
         {
             currentHP = currentHP - 1;
+        }
+
+        if(other.gameObject.tag == "Fireball")
+        {
+            currentHP = currentHP - 2;
         }
     }
 
