@@ -2415,7 +2415,7 @@ PrefabInstance:
     - target: {fileID: 9013417355518824456, guid: 36d0e569455740c41aee33b08c294718,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9013417355518824458, guid: 36d0e569455740c41aee33b08c294718,
         type: 3}
@@ -7152,7 +7152,7 @@ PrefabInstance:
     - target: {fileID: 3635334829579568394, guid: 83d0bf9f79435e7468b2274773a5517c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83d0bf9f79435e7468b2274773a5517c, type: 3}
@@ -7716,7 +7716,7 @@ PrefabInstance:
     - target: {fileID: 3635334829579568394, guid: 83d0bf9f79435e7468b2274773a5517c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83d0bf9f79435e7468b2274773a5517c, type: 3}
@@ -8064,7 +8064,7 @@ PrefabInstance:
     - target: {fileID: 3635334829579568394, guid: 83d0bf9f79435e7468b2274773a5517c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83d0bf9f79435e7468b2274773a5517c, type: 3}
@@ -8150,7 +8150,7 @@ PrefabInstance:
     - target: {fileID: 3635334829579568394, guid: 83d0bf9f79435e7468b2274773a5517c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83d0bf9f79435e7468b2274773a5517c, type: 3}
@@ -9808,7 +9808,7 @@ PrefabInstance:
     - target: {fileID: 3558498992572323573, guid: 6c97045f874920b449686841f5f0e1a5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3558498992572323577, guid: 6c97045f874920b449686841f5f0e1a5,
         type: 3}
@@ -11240,7 +11240,7 @@ PrefabInstance:
     - target: {fileID: 9013417355518824456, guid: 36d0e569455740c41aee33b08c294718,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9013417355518824458, guid: 36d0e569455740c41aee33b08c294718,
         type: 3}
@@ -12242,7 +12242,7 @@ PrefabInstance:
     - target: {fileID: 9013417355518824456, guid: 36d0e569455740c41aee33b08c294718,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9013417355518824458, guid: 36d0e569455740c41aee33b08c294718,
         type: 3}
@@ -12436,7 +12436,7 @@ PrefabInstance:
     - target: {fileID: 3558498992572323573, guid: 6c97045f874920b449686841f5f0e1a5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3558498992572323577, guid: 6c97045f874920b449686841f5f0e1a5,
         type: 3}
@@ -12555,7 +12555,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.8912649, y: -2.7214332}
@@ -13577,7 +13577,7 @@ PrefabInstance:
     - target: {fileID: 3558498992572323573, guid: 6c97045f874920b449686841f5f0e1a5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3558498992572323577, guid: 6c97045f874920b449686841f5f0e1a5,
         type: 3}
@@ -13663,7 +13663,7 @@ PrefabInstance:
     - target: {fileID: 3558498992572323573, guid: 6c97045f874920b449686841f5f0e1a5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3558498992572323577, guid: 6c97045f874920b449686841f5f0e1a5,
         type: 3}
@@ -13749,7 +13749,7 @@ PrefabInstance:
     - target: {fileID: 9013417355518824456, guid: 36d0e569455740c41aee33b08c294718,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9013417355518824458, guid: 36d0e569455740c41aee33b08c294718,
         type: 3}
@@ -14478,7 +14478,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 1.1781044, y: -2.7788029}
