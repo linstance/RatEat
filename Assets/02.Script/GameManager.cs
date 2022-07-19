@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    
+
     public GameObject Player;
     public GameObject MainCamera;
     public GameObject GM;
@@ -25,6 +27,13 @@ public class GameManager : MonoBehaviour
             Invoke("DestroyGM", 0.9f);
             Invoke("Ds", 0.91f);
         }
+
+        if(Cat.GameClear == true)
+        {
+            Invoke("DestroyGM_1", 0.9f);
+            Invoke("Ds", 0.91f);
+        }
+
     }
 
     private void Awake()
@@ -39,6 +48,12 @@ public class GameManager : MonoBehaviour
     {
         Destroy(HPbar);
         SceneManager.LoadScene("Game Over");
+    }
+
+    private void DestroyGM_1()
+    {
+        Destroy(HPbar);
+        SceneManager.LoadScene("Ending");
     }
 
     private void Ds()

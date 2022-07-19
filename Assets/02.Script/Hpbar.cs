@@ -26,7 +26,7 @@ public class Hpbar : MonoBehaviour
     {
         isCurrentHP = WarriorController.currentHP;
         Healthbar.fillAmount = isCurrentHP / 10f;
-        HPtext.text = isCurrentHP.ToString() + "/" + maxHealth.ToString();
+        HPtext.text = isCurrentHP.ToString() + "/ 10";
         if (isCurrentHP > maxHealth)
         {
             isCurrentHP = maxHealth;

@@ -34,7 +34,7 @@ public class Dog : MonoBehaviour
       
         if(CurDogHp <= 0)
         {
-            Debug.Log("엄준식");
+            
             Doganimator.SetTrigger("Is_Die");
             Invoke("DogDie", 2f);
             isLife = false;
@@ -70,7 +70,17 @@ public class Dog : MonoBehaviour
         }
     }
 
-   void Dam()
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "PlayerBullet")
+        {
+            DogTakeDamage(5);
+        }
+    }
+
+
+    void Dam()
     {
         if (Input.GetKeyDown(KeyCode.F1))
         {

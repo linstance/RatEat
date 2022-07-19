@@ -1709,6 +1709,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: flyHell
       objectReference: {fileID: 0}
+    - target: {fileID: 4697814935633759895, guid: b17ae946882c78149a1c5543d71c7446,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b17ae946882c78149a1c5543d71c7446, type: 3}
 --- !u!4 &93382278 stripped
@@ -2140,6 +2145,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: flyHell
       objectReference: {fileID: 0}
+    - target: {fileID: 4697814935633759895, guid: b17ae946882c78149a1c5543d71c7446,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b17ae946882c78149a1c5543d71c7446, type: 3}
 --- !u!4 &135629091 stripped
@@ -2418,6 +2428,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: flyHell
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697814935633759895, guid: b17ae946882c78149a1c5543d71c7446,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b17ae946882c78149a1c5543d71c7446, type: 3}
@@ -4069,6 +4084,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Ant
       objectReference: {fileID: 0}
+    - target: {fileID: 3558498992572323573, guid: 6c97045f874920b449686841f5f0e1a5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3558498992572323577, guid: 6c97045f874920b449686841f5f0e1a5,
         type: 3}
       propertyPath: m_RootOrder
@@ -4835,6 +4855,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: flyHell
       objectReference: {fileID: 0}
+    - target: {fileID: 4697814935633759895, guid: b17ae946882c78149a1c5543d71c7446,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b17ae946882c78149a1c5543d71c7446, type: 3}
 --- !u!4 &655767944 stripped
@@ -4860,6 +4885,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Red Ant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558498992572323573, guid: 6c97045f874920b449686841f5f0e1a5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3558498992572323577, guid: 6c97045f874920b449686841f5f0e1a5,
         type: 3}

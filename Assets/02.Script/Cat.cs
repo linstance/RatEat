@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Cat : MonoBehaviour
 {
     //회전되는 스피드이다.
-    
+
+    public static bool GameClear = false;
     public float CatminimumDistance;   //추적 범위
     public float CatSpeed;
     private GameObject target;  //타겟
     public GameObject bullet2;
     public GameObject bullet;
-    public GameObject Potal;
     private bool isLife;
     private Animator Catanimator;
     public float coolTime;
@@ -33,8 +34,9 @@ public class Cat : MonoBehaviour
             Catanimator.SetTrigger("is_Die");
             Invoke("CatDie", 1f);
             isLife = false;
+            GameClear = true;
         }
-
+        
         if(isLife == true)
         {
             attack();
@@ -42,14 +44,24 @@ public class Cat : MonoBehaviour
 
 
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "PlayerBullet")
+        {
+            CatTakeDamage(5);
+        }
+    }
+
     public void CatTakeDamage(int Damage)
     {
         CatHpBar.CatCurrentHp = CatHpBar.CatCurrentHp - Damage;
     }
+
     public void CatDie()
     {
         gameObject.SetActive(false);
-        Potal.SetActive(true);
+        SceneManager.LoadScene("Ending");
     }
 
 
