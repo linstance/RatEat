@@ -11,6 +11,7 @@ public class Cat : MonoBehaviour
     private GameObject target;  //타겟
     public GameObject bullet2;
     public GameObject bullet;
+    public GameObject Potal;
     private bool isLife;
     private Animator Catanimator;
     public float coolTime;
@@ -48,6 +49,7 @@ public class Cat : MonoBehaviour
     public void CatDie()
     {
         gameObject.SetActive(false);
+        Potal.SetActive(true);
     }
 
 

@@ -115,6 +115,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24a77f2e3b334248be337bb038075a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CatminimumDistance: 3
+  CatSpeed: 3
+  bullet2: {fileID: 1799883473277310569, guid: 66668d78ce919924095bd3446a68a2ac, type: 3}
+  bullet: {fileID: 8709220869308383542, guid: 1afaec658905d914b8ae4e06cb3fc5ce, type: 3}
+  Potal: {fileID: 0}
+  coolTime: 2
 --- !u!60 &3606203215379063898
 PolygonCollider2D:
   m_ObjectHideFlags: 0
