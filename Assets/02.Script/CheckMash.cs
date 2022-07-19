@@ -7,8 +7,6 @@ public class CheckMash : MonoBehaviour
     /*
       개미: Ant
       불개미: redAnt
-      거미: Spider
-      파리: Fly
       파리지옥 flyHell
       벌: Bee
     */
@@ -39,13 +37,15 @@ public class CheckMash : MonoBehaviour
         GameObject[] Flys = GameObject.FindGameObjectsWithTag("Fly");
         GameObject[] FlyHells = GameObject.FindGameObjectsWithTag("flyHell");
         GameObject[] Bees = GameObject.FindGameObjectsWithTag("Bee");
+        GameObject[] Dog = GameObject.FindGameObjectsWithTag("Dog");
+        GameObject[] Cat = GameObject.FindGameObjectsWithTag("Cat");
 
-        if (Monster < Ants.Length || Monster < redAnts.Length || Monster < Spiders.Length || Monster < Flys.Length || Monster < FlyHells.Length || Monster < Bees.Length)
+        if (Monster < Ants.Length || Monster < redAnts.Length || Monster < Spiders.Length || Monster < Flys.Length || Monster < FlyHells.Length || Monster < Bees.Length || Monster < Dog.Length || Monster < Cat.Length)
         {
             OpenGate.SetActive(false);
             CloseGate.SetActive(true);
         }
-        else if (Monster <= Ants.Length || Monster <= redAnts.Length || Monster <= Spiders.Length || Monster <= Flys.Length || Monster <= FlyHells.Length || Monster <= Bees.Length)
+        else if (Monster <= Ants.Length || Monster <= redAnts.Length || Monster <= Spiders.Length || Monster <= Flys.Length || Monster <= FlyHells.Length || Monster <= Bees.Length || Monster <= Dog.Length || Monster <= Cat.Length)
         {
             OpenGate.SetActive(true);
             CloseGate.SetActive(false);

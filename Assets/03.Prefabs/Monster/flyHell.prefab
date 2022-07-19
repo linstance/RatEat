@@ -13,13 +13,14 @@ GameObject:
   - component: {fileID: 4697814935633759898}
   - component: {fileID: 4697814935633759899}
   - component: {fileID: 4697814935633759896}
+  - component: {fileID: 1176266823}
   m_Layer: 8
   m_Name: flyHell
   m_TagString: flyHell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4697814935633759893
 Transform:
   m_ObjectHideFlags: 0
@@ -147,3 +148,24 @@ MonoBehaviour:
   coolTime: 2
   flyHellDistance: 2.5
   flyHellAnimator: {fileID: 4697814935633759898}
+--- !u!50 &1176266823
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697814935633759895}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

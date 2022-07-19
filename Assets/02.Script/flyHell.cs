@@ -37,9 +37,7 @@ public class flyHell : MonoBehaviour
         {
             
             
-            
          flyHellAttack();
-            
             
             Direction();
         }
@@ -80,11 +78,14 @@ public class flyHell : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("충돌");
         if (collision.gameObject.tag == "PlayerBullet")
         {
             takeflyHelDamage(5);
+            Debug.Log(flyHellHP);
         }
     }
+
 
     private void flyHellDie()
     {
@@ -96,4 +97,6 @@ public class flyHell : MonoBehaviour
     {
         flyHellHP = flyHellHP - Damage;
     }
+
+    
 }
