@@ -553,7 +553,7 @@ public class WarriorController : MonoBehaviour
 
     void Skill_03()
     {
-        currentMP -= 30;
+        currentMP -= 0;
 
         for (int i = 0; i < 360; i += 90)
         {

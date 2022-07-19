@@ -5230,7 +5230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Off_icon: {fileID: 328808673}
-  On_icon: {fileID: 107609598}
+  On_icon: {fileID: 0}
 --- !u!212 &328808677
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5304049974164198077}
   - component: {fileID: 8784007721078971826}
   - component: {fileID: 1771585912243648085}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Big Ant
   m_TagString: Ant
   m_Icon: {fileID: 0}

@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 89907187799275459}
   - component: {fileID: 5113773725166917982}
   - component: {fileID: 1466239445324441062}
-  m_Layer: 0
+  - component: {fileID: 5372081571485339637}
+  m_Layer: 8
   m_Name: Big Red Ant
-  m_TagString: Untagged
+  m_TagString: redAnt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,10 +149,29 @@ MonoBehaviour:
   RedAntHp: 20
   RedAntspeed: 1
   RedAntminimumDistance: 1
-  RedAntAnimator: {fileID: 0}
+  RedAntAnimator: {fileID: 5372081571485339637}
   pos: {fileID: 7135851883134533481}
   boxSize: {x: 0.7, y: 1.6}
   coolTime: 0.5
+--- !u!95 &5372081571485339637
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3749998636328656160}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cefd60b045f71c749b6869c12c73a341, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3892628661413334163
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7135851883134533481}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Big Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -97,8 +97,8 @@ public class Dog : MonoBehaviour
             
             Destroy(temp, 2f);
 
-            
-            temp.transform.position = Vector2.zero;
+
+            temp.transform.position = transform.position;
 
             
             temp.transform.rotation = Quaternion.Euler(0, 0, i);
